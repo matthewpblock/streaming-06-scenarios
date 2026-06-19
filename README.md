@@ -37,8 +37,18 @@ You'll work with these areas:
 ## Instructions
 
 Follow the instructions below to run the complete MDA pipeline.
+
+### 1. Get an AISStream API Key
+
+To access live maritime data, you need a free API key from AISStream:
+
+1. Go to [aisstream.io](https://aisstream.io/) and create a free account.
+2. Once logged in, generate a new API key from your dashboard.
+3. In your project directory, copy `.env.example` to `.env` (if you haven't already).
+4. Add your key to the `.env` file: `AISSTREAM_API_KEY=your_key_here`
+
 > [!IMPORTANT]
-> Make sure your `.env` file contains your `AISSTREAM_API_KEY=...` before starting.
+> Make sure your `.env` file contains your `AISSTREAM_API_KEY` before starting the producer.
 
 ## Success
 
