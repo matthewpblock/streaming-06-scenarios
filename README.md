@@ -1,4 +1,4 @@
-﻿---
+---
 type: overview
 description: Maritime Domain Awareness pipeline overview
 ---
@@ -17,7 +17,13 @@ into a real-time tracking solution for Chinese maritime forces.
 
 ## This Project
 
-This project brings the full streaming analytics workflow together to track vessels using live AIS data.
+This project brings the full streaming analytics workflow together to track vessels
+using live AIS data.
+
+![Dashboard Screenshot](./docs/dashboard-screenshot.png)
+
+> **Data Schema**: Please refer to the [Data Dictionary](./docs/data-dictionary.md)
+> for the database schema, derived fields, and validation rules.
 
 The project uses Kafka to move AIS messages from a producer to a consumer.
 

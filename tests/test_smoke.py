@@ -8,14 +8,20 @@ OBS: You do not need to read or modify this file.
      It exists so that `uv run python -m pytest` passes.
 """
 
-from streaming import kafka_consumer_case, kafka_producer_case
+import importlib
 
 
 def test_consumer_module_imports() -> None:
     """Consumer module should import without running Kafka operations."""
-    assert kafka_consumer_case is not None
+    consumer_module = importlib.import_module(
+        "streaming.kafka_consumer_critical-section-ag"
+    )
+    assert consumer_module is not None
 
 
 def test_producer_module_imports() -> None:
     """Producer module should import without running Kafka operations."""
-    assert kafka_producer_case is not None
+    producer_module = importlib.import_module(
+        "streaming.kafka_producer_critical-section-ag"
+    )
+    assert producer_module is not None

@@ -1,41 +1,44 @@
-"""Tests for streaming.storage.storage_case."""
+"""Tests for streaming.storage.storage_critical-section-ag."""
 
+import importlib
 from pathlib import Path
 
 import duckdb
 
-from streaming.storage.storage_case import (
-    CONSUMED_REJECTED_FIELDNAMES,
-    CONSUMED_VALID_FIELDNAMES,
-    REJECTED_TABLE_NAME,
-    VALID_TABLE_NAME,
-    clean_rejected_consumed_record,
-    clean_valid_consumed_record,
-    clear_storage_tables,
-    create_storage_tables,
-    write_rejected_record,
-    write_valid_record,
-)
+_storage = importlib.import_module("streaming.storage.storage_critical-section-ag")
+CONSUMED_REJECTED_FIELDNAMES = _storage.CONSUMED_REJECTED_FIELDNAMES
+CONSUMED_VALID_FIELDNAMES = _storage.CONSUMED_VALID_FIELDNAMES
+REJECTED_TABLE_NAME = _storage.REJECTED_TABLE_NAME
+VALID_TABLE_NAME = _storage.VALID_TABLE_NAME
+clean_rejected_consumed_record = _storage.clean_rejected_consumed_record
+clean_valid_consumed_record = _storage.clean_valid_consumed_record
+clear_storage_tables = _storage.clear_storage_tables
+create_storage_tables = _storage.create_storage_tables
+write_rejected_record = _storage.write_rejected_record
+write_valid_record = _storage.write_valid_record
+
 
 # === FIXTURES ===
 
 SAMPLE_VALID_RECORD = {
-    "order_id": "ORD-001",
-    "datetime": "2026-05-08T10:00:00",
-    "region_id": "US-MO",
-    "currency_code": "USD",
-    "product_id": "PROD-01",
-    "unit_price": "29.99",
-    "quantity": "2",
-    "is_online": "true",
-    "customer_id": "CUST-001",
-    "is_new_customer": "false",
-    "device_type": "mobile",
-    "payment_method": "credit_card",
-    "referral_source": "organic",
-    "discount_code": "",
-    "customer_note": "",
-    "_kafka_key": "ORD-001",
+    "mmsi": "412123456",
+    "ship_name": "TEST SHIP",
+    "latitude": "30.0",
+    "longitude": "120.0",
+    "timestamp": "2026-05-08T10:00:00",
+    "message_type": "PositionReport",
+    "ship_type": "30",
+    "cog": "90.0",
+    "sog": "15.0",
+    "heading": "90.0",
+    "destination": "SHANGHAI",
+    "call_sign": "TEST",
+    "imo_number": "1234567",
+    "vessel_category": "Test Category",
+    "threat_range_km": "15.0",
+    "risk_level": "LOW",
+    "threat_description": "Test Description",
+    "_kafka_key": "412123456",
     "_kafka_partition": "0",
     "_kafka_offset": "42",
 }
@@ -50,8 +53,8 @@ def test_clean_valid_consumed_record_keeps_expected_fields() -> None:
 
 
 def test_clean_valid_consumed_record_fills_missing_with_empty() -> None:
-    result = clean_valid_consumed_record({"order_id": "ORD-001"})
-    assert result["region_id"] == ""
+    result = clean_valid_consumed_record({"mmsi": "412123456"})
+    assert result["ship_name"] is None
 
 
 def test_clean_rejected_consumed_record_keeps_expected_fields() -> None:
@@ -103,17 +106,17 @@ def test_write_valid_record_stores_correct_values(tmp_path: Path) -> None:
     create_storage_tables(db_path)
     write_valid_record(db_path, SAMPLE_VALID_RECORD)
     with duckdb.connect(str(db_path)) as conn:
-        sql = f"SELECT order_id, region_id FROM {VALID_TABLE_NAME}"  # noqa: S608
+        sql = f"SELECT mmsi, ship_name FROM {VALID_TABLE_NAME}"  # noqa: S608
         row = conn.execute(sql).fetchone()
     assert row is not None
-    assert row[0] == "ORD-001"
-    assert row[1] == "US-MO"
+    assert row[0] == "412123456"
+    assert row[1] == "TEST SHIP"
 
 
 def test_write_rejected_record_inserts_with_errors(tmp_path: Path) -> None:
     db_path = tmp_path / "test.duckdb"
     create_storage_tables(db_path)
-    write_rejected_record(db_path, SAMPLE_VALID_RECORD, ["Missing field: total"])
+    write_rejected_record(db_path, SAMPLE_VALID_RECORD, ["Missing field: mmsi"])
     with duckdb.connect(str(db_path)) as conn:
         sql = f"SELECT COUNT(*) FROM {REJECTED_TABLE_NAME}"  # noqa: S608
         row = conn.execute(sql).fetchone()
@@ -124,7 +127,7 @@ def test_write_rejected_record_inserts_with_errors(tmp_path: Path) -> None:
 def test_write_multiple_records(tmp_path: Path) -> None:
     db_path = tmp_path / "test.duckdb"
     create_storage_tables(db_path)
-    record2 = {**SAMPLE_VALID_RECORD, "order_id": "ORD-002"}
+    record2 = {**SAMPLE_VALID_RECORD, "mmsi": "412123457"}
     write_valid_record(db_path, SAMPLE_VALID_RECORD)
     write_valid_record(db_path, record2)
     with duckdb.connect(str(db_path)) as conn:
