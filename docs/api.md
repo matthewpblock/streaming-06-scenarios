@@ -1,3 +1,7 @@
+﻿---
+type: reference
+description: API references and functions
+---
 # API Reference
 
 Auto-generated from Python docstrings.

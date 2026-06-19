@@ -1,3 +1,7 @@
+﻿---
+type: guideline
+description: Agent instructions and setup workflow
+---
 # ./AGENTS.md
 
 ## WHY

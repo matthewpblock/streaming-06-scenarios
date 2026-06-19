@@ -1,3 +1,7 @@
+﻿---
+type: overview
+description: Project documentation homepage
+---
 # Maritime Domain Awareness Pipeline
 
 This site provides documentation for the real-time Maritime Domain Awareness (MDA)

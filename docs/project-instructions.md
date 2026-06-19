@@ -1,3 +1,7 @@
+﻿---
+type: instruction
+description: Instructions for running and modifying the pipeline
+---
 # Project Instructions
 
 ## Topic

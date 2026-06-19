@@ -1,3 +1,7 @@
+﻿---
+type: reference
+description: Glossary of streaming analytics terminology
+---
 # Glossary
 
 Key terms used in this project and in streaming data analytics.

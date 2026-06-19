@@ -1,3 +1,7 @@
+﻿---
+type: overview
+description: Maritime Domain Awareness pipeline overview
+---
 # Maritime Domain Awareness (MDA) Pipeline
 
 [![API Reference](https://img.shields.io/badge/API--Utils-datafun--streaming-purple)](https://denisecase.github.io/datafun-streaming/api/)
