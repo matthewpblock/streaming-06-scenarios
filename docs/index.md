@@ -1,8 +1,10 @@
-﻿---
+---
 type: overview
 description: Project documentation homepage
 ---
 # Maritime Domain Awareness Pipeline
+
+![Dashboard Screenshot](./dashboard-screenshot.png)
 
 This site provides documentation for the real-time Maritime Domain Awareness (MDA)
 streaming data project. Use the navigation to explore module-specific materials.
