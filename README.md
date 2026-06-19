@@ -1,139 +1,81 @@
-# streaming-06-scenarios
+# Maritime Domain Awareness (MDA) Pipeline
 
 [![API Reference](https://img.shields.io/badge/API--Utils-datafun--streaming-purple)](https://denisecase.github.io/datafun-streaming/api/)
 [![Workflow Guide](https://img.shields.io/badge/Pro--Guide-pro--analytics--02-green)](https://denisecase.github.io/pro-analytics-02/workflow-b-apply-example-project/)
 [![Python 3.14](https://img.shields.io/badge/python-3.14%2B-blue?logo=python)](./pyproject.toml)
 [![MIT](https://img.shields.io/badge/license-see%20LICENSE-yellow.svg)](./LICENSE)
 
-> Streaming data analytics: complete pipeline.
+> Streaming data analytics: complete Maritime Domain Awareness pipeline.
 
 Streaming analytics requires working with data in motion
-and distributed, scalable systems.
-This course builds capabilities through working projects.
-In the age of generative AI, durable skills are grounded in real work:
-setting up a professional environment,
-reading and running code,
-understanding the logic,
-and pushing work to a shared repository.
-Each project follows the structure of professional Python projects.
-We learn by doing.
+and distributed, scalable systems. This project refactors the original sales pipeline
+into a real-time tracking solution for Chinese maritime forces.
 
 ## This Project
 
-This project brings the full streaming analytics workflow together.
+This project brings the full streaming analytics workflow together to track vessels using live AIS data.
 
-The project uses Kafka to move sales messages from a producer to a consumer.
-The producer sends validated sales messages to a Kafka topic.
-The consumer reads each message, validates required fields, computes derived values,
-updates a live chart, writes processed records to CSV, and stores results in DuckDB.
+The project uses Kafka to move AIS messages from a producer to a consumer.
 
-This module combines the major skills from the course:
-
-- producing messages
-- consuming messages
-- validating message structure
-- computing derived fields
-- visualizing the stream
-- storing processed data
-
-The goal is to see how the parts work together in one complete scenario.
+- The **Producer** connects to the live `wss://stream.aisstream.io/v0/stream` WebSocket,
+  filters for Chinese vessels, and sends them to a Kafka topic.
+- The **Consumer** reads each message, validates MMSI requirements, computes threat ranges
+  based on vessel classification, updates a running statistic,
+  and stores results in a DuckDB database.
+- The **Streamlit Dashboard** visualizes the database contents with an interactive
+  Pydeck map and KPI metrics.
 
 ## Working Files
 
-You'll work with just these areas:
+You'll work with these areas:
 
-- **data/** - input data and generated output files
+- **data/** - input data, output CSV files, and the DuckDB database
 - **docs/** - the project narrative and documentation
 - **src/streaming/** - producer, consumer, and supporting code
-- **pyproject.toml** - update authorship & links
-- **zensical.toml** - update authorship & links
+- **pyproject.toml** - dependencies and environment settings
 
 ## Instructions
 
-Follow the
-[step-by-step workflow guide](https://denisecase.github.io/pro-analytics-02/workflow-b-apply-example-project/)
-to complete:
-
-1. Phase 1. **Start & Run**
-2. Phase 2. **Change Authorship**
-3. Phase 3. **Read & Understand**
-4. Phase 4. **Modify**
-5. Phase 5. **Apply**
-
-## Challenges
-
-Challenges are expected.
-Sometimes instructions may not quite match your operating system.
-When issues occur, share screenshots, error messages, and details about what you tried.
-Working through issues is part of implementing professional projects.
+Follow the instructions below to run the complete MDA pipeline.
+> [!IMPORTANT]
+> Make sure your `.env` file contains your `AISSTREAM_API_KEY=...` before starting.
 
 ## Success
 
-After completing Phase 1. **Start & Run**, you'll have your own GitHub project
-running with Kafka.
+Use five named terminals:
 
-Use four named terminals:
+1. **kafka** (WSL) - keep the Kafka message broker running
+2. **topics** (WSL) - create, list, or reset Kafka topics
+3. **producer** (PowerShell) - run the producer to stream WebSocket data into Kafka
+4. **consumer** (PowerShell) - run the consumer to enrich and store data in DuckDB
+5. **dashboard** (PowerShell) - run the Streamlit dashboard
 
-1. **kafka** - keep the Kafka message broker running
-2. **topics** - create, list, or reset Kafka topics
-3. **producer** - run the project and producer
-4. **consumer** - run the consumer
-
-After the producer and consumer run successfully, you should see:
-
-```shell
-========================
-Consumer executed successfully!
-========================
-```
-
-A new file `project.log` will appear in the root project folder
-and processed data will appear in data/output/.
+After the producer and consumer run successfully, processed data will appear in
+`data/output/ais.duckdb`, and the dashboard will display live tracking data.
 
 ## Command Reference
-
-The commands below are used in the workflow guide above.
-They are provided here for convenience.
-
-**Important:** the first few times you run a project,
-follow the guide with the **complete instructions**.
 
 <details>
 <summary>Show command reference</summary>
 
 ### In a machine terminal (open in your `Repos` folder)
 
-After you get a copy of this repo in your own GitHub account,
-open a machine terminal in your `Repos` folder:
-
 ```bash
-# Replace username with YOUR GitHub username.
 git clone https://github.com/matthewpblock/streaming-06-scenarios
-
 cd streaming-06-scenarios
 code .
 ```
 
 ### In VS Code Terminal 1: Start Kafka (kafka)
 
-For full instructions see
-[**start kafka**](https://denisecase.github.io/pro-analytics-02/kafka/start-kafka/).
-
-If any command fails,
-repeat the steps at
-[**install kafka**](https://denisecase.github.io/pro-analytics-02/kafka/install-kafka/)
-until starting up is reliable.
-
 Open a new VS Code terminal. Rename it `kafka`.
-If running Windows, specify the terminal type as **wsl** or
-type `wsl`.
+If running Windows, specify the terminal type as **wsl** or type `wsl`.
 Run the commands one at a time.
 
 Step 1. Verify Java and PATH
 
 ```bash
 echo "$JAVA_HOME"
-
 "$JAVA_HOME/bin/java" --version
 ```
 
@@ -141,13 +83,9 @@ Step 2. Rebuild ClusterID (as needed)
 
 ```bash
 cd ~/kafka
-
 rm -rf /tmp/kraft-combined-logs
-
 KAFKA_CLUSTER_ID="$(bin/kafka-storage.sh random-uuid)"
-
 echo "Cluster ID: $KAFKA_CLUSTER_ID"
-
 bin/kafka-storage.sh format --standalone -t "$KAFKA_CLUSTER_ID" -c config/server.properties
 ```
 
@@ -155,21 +93,13 @@ Step 3. Start kafka server (keep running)
 
 ```bash
 cd ~/kafka
-
 bin/kafka-server-start.sh config/server.properties
 ```
 
 ### In VS Code terminal 2: Create Topic (topics)
 
-For full instructions see
-[**create topic**](https://denisecase.github.io/pro-analytics-02/kafka/create-topic/).
-
-The topic name must match the name defined in your
-`.env` file (copy `.env.example` to `.env`).
-
 Open another VS Code terminal. Rename it `topics`.
-If running Windows, specify the terminal type as **wsl** or
-type `wsl`.
+If running Windows, specify the terminal type as **wsl** or type `wsl`.
 Run the commands one at a time.
 
 ```bash
@@ -179,77 +109,57 @@ bin/kafka-topics.sh --create \
   --bootstrap-server localhost:9092 \
   --partitions 1 \
   --replication-factor 1 \
-  --topic streaming-06-scenarios-case
+  --topic mda-vessels-topic-ag
 ```
 
-### In VS Code Terminal 3: Run Project and Producer (producer)
+### In VS Code Terminal 3: Run Producer (producer)
 
 Open another VS Code terminal. Rename it `producer`.
 If running Windows, use **PowerShell**.
-Run the commands one at a time.
 
 ```shell
-# reset uv cache only if/when you start getting strange dependency errors
-# uv cache clean
-
 uv self update
 uv python pin 3.14
 uv sync --extra dev --extra docs --upgrade
 
 uvx pre-commit install
 
-git add -A
-uvx pre-commit run --all-files
-# repeat if changes were made
-git add -A
-uvx pre-commit run --all-files
-
-# run the producer
+# run the custom MDA producer with websockets dependency
 clear
-uv run python -m streaming.kafka_producer_case
-
-# do chores
-uv run ruff format .
-uv run ruff check . --fix
-uv run python -m pyright
-uv run python -m pytest
-uv run python -m zensical build
-
-# save progress
-git add -A
-git commit -m "update"
-git push -u origin main
+uv run --with websockets python -m src.streaming.kafka_producer_critical-section-ag
 ```
 
 ### In VS Code Terminal 4: Run Consumer (consumer)
 
 Open another VS Code terminal. Rename it `consumer`.
 If running Windows, use **PowerShell**.
-Run the commands one at a time.
-Clear the terminal, then start the consumer.
 
 ```shell
 clear
-uv run python -m streaming.kafka_consumer_case
+uv run python -m src.streaming.kafka_consumer_critical-section-ag
 ```
 
-To start fresh, see
-[manage topics](https://denisecase.github.io/pro-analytics-02/kafka/manage-topics/)
-to delete the topic and recreate it.
+### In VS Code Terminal 5: Run Dashboard (dashboard)
+
+Open another VS Code terminal. Rename it `dashboard`.
+If running Windows, use **PowerShell**.
+
+```shell
+clear
+uv run --with streamlit --with duckdb python -m streamlit run src/streaming/visualizations/dashboard-ag.py
+```
 
 </details>
 
 ## Notes
 
 - Use the **UP ARROW** and **DOWN ARROW** in the terminal to scroll through past commands.
-- Use `CTRL+f` to find (and replace) text within a file.
-- You do not need to add to or modify `tests/`. They are provided for example only.
-- Many files are silent helpers. Explore as you like, but nothing is required.
-- You do NOT not to understand everything; understanding builds naturally over time.
+- Use `CTRL+c` to gracefully stop a running process.
+- All new files follow the `-ag` suffix and `critical-section` naming convention
+  to strictly preserve original files.
 
 ## Troubleshooting >>> or
 
 If you see something like this in your terminal: `>>>` or `...`
 You accidentally started Python interactive mode.
-It happens.
 Press `Ctrl+c` (both keys together) or `Ctrl+Z` then `Enter` on Windows.

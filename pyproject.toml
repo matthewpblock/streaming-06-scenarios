@@ -24,6 +24,8 @@ dependencies = [
     "duckdb", # WHY: In-memory database for testing and prototyping.
     "matplotlib", # WHY: Static plotting library for quick visualizations.
     "python-dotenv", # WHY: Load environment variables from .env files for configuration.
+    "websockets", # WHY: Connect to live data streams like AISStream.
+    "streamlit", # WHY: Interactive dashboard for MDA pipeline.
 ]
 
 [project.optional-dependencies]

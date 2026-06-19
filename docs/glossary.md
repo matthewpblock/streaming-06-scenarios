@@ -40,7 +40,7 @@ Used in Kafka 4.x and later. No separate ZooKeeper process is needed.
 ### Message / Event
 
 A single record produced to and consumed from a Kafka topic.
-In this project each message represents one sales transaction as JSON.
+In this project each message represents one vessel telemetry report (e.g., from AISStream) as JSON.
 
 ### Offset
 
@@ -75,13 +75,13 @@ Defined in `data_validation/data_contract_case.py`.
 ### Derived Fields
 
 Fields calculated by the consumer from raw message values and reference data.
-Examples include `subtotal`, `tax_amount`, and `total`.
-See `data_engineering/derived_fields.py`.
+Examples include `threat_range_km`, `vessel_category`, and `risk_level`.
+See `data_engineering/derived_fields-ag.py`.
 
 ### Reference Data
 
-Lookup tables such as regions, products, and currencies loaded from CSV files.
-Used during validation to confirm that field values are known and allowed.
+Lookup rules or mappings (such as vessel classification codes).
+Used during enrichment to categorize vessels and assign threat risk levels.
 
 ### Rejected Record
 
@@ -115,7 +115,8 @@ DuckDB uses standard SQL syntax.
 ### VARCHAR
 
 A SQL column type for text values of variable length.
-All fields in this project are stored as VARCHAR in DuckDB.
+Many fields in this project are stored as VARCHAR in DuckDB, alongside DOUBLE and INTEGER
+types for specific metrics.
 
 ---
 
