@@ -303,7 +303,8 @@ with tab_map:
             deck = pdk.Deck(
                 layers=[path_layer, marker_layer],
                 initial_view_state=view_state,
-                map_style="mapbox://styles/mapbox/dark-v9",
+                map_provider="carto",
+                map_style="dark",
                 tooltip={
                     "text": "Vessel: {ship_name}\nMMSI: {mmsi}\nSpeed: {sog} kts\nTime: {timestamp}"
                 },
@@ -356,7 +357,8 @@ with tab_map:
             deck = pdk.Deck(
                 layers=[ring_layer, marker_layer],
                 initial_view_state=view_state,
-                map_style="mapbox://styles/mapbox/dark-v9",
+                map_provider="carto",
+                map_style="dark",
                 tooltip={
                     "html": "<b>Vessel:</b> {ship_name} (MMSI: {mmsi})<br/>"
                     "<b>Category:</b> {vessel_category}<br/>"

@@ -593,3 +593,165 @@ CHECK:
 2026-06-19 06:19:39 | INFO | P06-PRODUCER | Forwarded 30 Chinese vessel telemetry messages. Latest: MMSI=413995708 Name='ZHIHANG188' type=PositionReport
 2026-06-19 06:20:11 | INFO | P06-PRODUCER | Forwarded 40 Chinese vessel telemetry messages. Latest: MMSI=413800827 Name='QIJI636' type=StaticDataReport
 2026-06-19 06:21:06 | INFO | P06-PRODUCER | Forwarded 50 Chinese vessel telemetry messages. Latest: MMSI=413228010 Name='EN ZE' type=StaticDataReport
+2026-06-19 06:21:53 | INFO | P06-PRODUCER | Forwarded 60 Chinese vessel telemetry messages. Latest: MMSI=413543480 Name='AN YANG 118' type=PositionReport
+2026-06-19 06:22:07 | DEBUG | C06-CONSUMER | KAFKA_BOOTSTRAP_SERVERS           = localhost:9092
+2026-06-19 06:22:07 | DEBUG | C06-CONSUMER | KAFKA_BROKER_ADDRESS_FAMILY       = v6
+2026-06-19 06:22:07 | DEBUG | C06-CONSUMER | KAFKA_TOPIC                       = mda-vessels-topic-ag
+2026-06-19 06:22:07 | DEBUG | C06-CONSUMER | KAFKA_CLEAR_TOPIC_ON_START        = true
+2026-06-19 06:22:07 | DEBUG | C06-CONSUMER | PRODUCER_MESSAGE_COUNT            = 3
+2026-06-19 06:22:07 | DEBUG | C06-CONSUMER | PRODUCER_MESSAGE_INTERVAL_SECONDS = 2
+2026-06-19 06:22:07 | DEBUG | C06-CONSUMER | PRODUCER_MAX_MESSAGES             = 50
+2026-06-19 06:22:07 | DEBUG | C06-CONSUMER | PRODUCER_POLL_INTERVAL_SECONDS    = 15
+2026-06-19 06:22:07 | DEBUG | C06-CONSUMER | KAFKA_GROUP_ID                    = streaming-consumer-group-A
+2026-06-19 06:22:07 | DEBUG | C06-CONSUMER | KAFKA_AUTO_OFFSET_RESET           = earliest
+2026-06-19 06:22:07 | DEBUG | C06-CONSUMER | CONSUMER_TIMEOUT_SECONDS          = 10
+2026-06-19 06:22:07 | DEBUG | C06-CONSUMER | CONSUMER_MAX_MESSAGES             = 1000
+2026-06-19 06:22:07 | DEBUG | C06-CONSUMER | AISSTREAM_API_KEY                 = ee7ff9340b731621f9d94097b7d23f6293607c06
+2026-06-19 06:22:07 | INFO | C06-CONSUMER | === RUN START ===
+2026-06-19 06:22:07 | INFO | C06-CONSUMER | project=C06-AIS-CONSUMER
+2026-06-19 06:22:07 | INFO | C06-CONSUMER | repo_dir=streaming-06-scenarios
+2026-06-19 06:22:07 | INFO | C06-CONSUMER | python=3.14.5
+2026-06-19 06:22:07 | INFO | C06-CONSUMER | os=Windows 11
+2026-06-19 06:22:07 | INFO | C06-CONSUMER | shell=powershell
+2026-06-19 06:22:07 | INFO | C06-CONSUMER | cwd=.
+2026-06-19 06:22:07 | INFO | C06-CONSUMER | github_actions=False
+2026-06-19 06:22:07 | INFO | C06-CONSUMER | ========================
+2026-06-19 06:22:07 | INFO | C06-CONSUMER | START AIS consumer main()
+2026-06-19 06:22:07 | INFO | C06-CONSUMER | ========================
+2026-06-19 06:22:07 | INFO | C06-CONSUMER | ROOT_DIR = .
+2026-06-19 06:22:07 | INFO | C06-CONSUMER | DATA_DIR = data
+2026-06-19 06:22:07 | INFO | C06-CONSUMER | OUTPUT_CSV = data\output\consumed_ais.csv
+2026-06-19 06:22:07 | INFO | C06-CONSUMER | OUTPUT_DB = data\output\ais.duckdb
+2026-06-19 06:22:07 | INFO | C06-CONSUMER | Loading settings from .env...
+2026-06-19 06:22:07 | INFO | C06-CONSUMER | KAFKA_BOOTSTRAP_SERVERS  = localhost:9092
+2026-06-19 06:22:07 | INFO | C06-CONSUMER | KAFKA_TOPIC              = mda-vessels-topic-ag
+2026-06-19 06:22:07 | INFO | C06-CONSUMER | KAFKA_GROUP_ID           = streaming-consumer-group-A
+2026-06-19 06:22:07 | INFO | C06-CONSUMER | CONSUMER_TIMEOUT_SECONDS = 10.0
+2026-06-19 06:22:07 | INFO | C06-CONSUMER | CONSUMER_MAX_MESSAGES    = 1000
+2026-06-19 06:22:07 | INFO | C06-CONSUMER | Verifying Kafka connection...
+2026-06-19 06:22:07 | INFO | C06-CONSUMER | Kafka port is reachable.
+2026-06-19 06:22:07 | INFO | C06-CONSUMER | Verifying Kafka topic...
+2026-06-19 06:22:11 | INFO | C06-CONSUMER | Topic 'mda-vessels-topic-ag' exists.
+2026-06-19 06:22:11 | INFO | C06-CONSUMER | Found 62 message(s) available in topic.
+2026-06-19 06:22:11 | INFO | C06-CONSUMER | Creating Kafka consumer...
+2026-06-19 06:22:11 | INFO | C06-CONSUMER | Subscribed to topic: 'mda-vessels-topic-ag' (reading from beginning)
+2026-06-19 06:22:11 | INFO | C06-CONSUMER | Initializing output...
+2026-06-19 06:22:11 | INFO | C06-CONSUMER | Output CSV cleared: consumed_ais.csv
+2026-06-19 06:22:11 | INFO | C06-STORAGE | Initialized tables consumed_valid_ais and consumed_rejected_ais in DuckDB.
+2026-06-19 06:22:11 | INFO | C06-STORAGE | Cleared storage tables.
+2026-06-19 06:22:11 | INFO | C06-CONSUMER | Database initialized: ais.duckdb
+2026-06-19 06:22:11 | INFO | C06-CONSUMER | Live chart initialized.
+2026-06-19 06:22:11 | INFO | C06-CONSUMER | Consuming messages...
+2026-06-19 06:22:11 | INFO | C06-CONSUMER | Waiting for up to 1000 message(s).
+2026-06-19 06:22:11 | INFO | C06-CONSUMER | Press CTRL+C to stop early.
+
+2026-06-19 06:22:15 | INFO | C06-CONSUMER | Forwarded & Logged: MMSI=413504220 Name='JIN HAI 667' Risk=LOW SOG=0.1 knots
+2026-06-19 06:22:15 | INFO | C06-CONSUMER | Forwarded & Logged: MMSI=412401780 Name='NAN GANG 86' Risk=LOW SOG=8.3 knots
+2026-06-19 06:22:15 | INFO | C06-CONSUMER | Forwarded & Logged: MMSI=413865389 Name='ZHONGHANG927' Risk=LOW SOG=None knots
+2026-06-19 06:22:15 | INFO | C06-CONSUMER | Forwarded & Logged: MMSI=413479290 Name='HENG  YU  93' Risk=LOW SOG=None knots
+2026-06-19 06:22:15 | WARNING | C06-CONSUMER | Validation failed for vessel MMSI 4125706
+2026-06-19 06:22:15 | WARNING | C06-CONSUMER | Errors: ['Required field is blank: ship_name']
+2026-06-19 06:22:15 | INFO | C06-CONSUMER | Forwarded & Logged: MMSI=413494920 Name='YIN ZHU HU' Risk=LOW SOG=None knots
+2026-06-19 06:22:15 | INFO | C06-CONSUMER | Forwarded & Logged: MMSI=413342580 Name='LIAN YANG JUN 6' Risk=LOW SOG=8.2 knots
+2026-06-19 06:22:15 | INFO | C06-CONSUMER | Forwarded & Logged: MMSI=413228010 Name='EN ZE' Risk=LOW SOG=5.9 knots
+2026-06-19 06:22:15 | INFO | C06-CONSUMER | Forwarded & Logged: MMSI=413906548 Name='ZHUHANG28' Risk=LOW SOG=None knots
+2026-06-19 06:22:15 | INFO | C06-CONSUMER | Forwarded & Logged: MMSI=412400040 Name='SHENG PING189' Risk=LOW SOG=0 knots
+2026-06-19 06:22:16 | INFO | C06-CONSUMER | Forwarded & Logged: MMSI=413495980 Name='HUIJINQIAO299' Risk=LOW SOG=0.1 knots
+2026-06-19 06:22:16 | WARNING | C06-CONSUMER | Validation failed for vessel MMSI 4125706
+2026-06-19 06:22:16 | WARNING | C06-CONSUMER | Errors: ['Required field is blank: ship_name']
+2026-06-19 06:22:16 | INFO | C06-CONSUMER | Forwarded & Logged: MMSI=413907175 Name='FULI838' Risk=LOW SOG=0 knots
+2026-06-19 06:22:16 | INFO | C06-CONSUMER | Forwarded & Logged: MMSI=413906548 Name='ZHUHANG28' Risk=LOW SOG=None knots
+2026-06-19 06:22:16 | INFO | C06-CONSUMER | Forwarded & Logged: MMSI=413800831 Name='TAIZUN9' Risk=LOW SOG=0 knots
+2026-06-19 06:22:16 | WARNING | C06-CONSUMER | Validation failed for vessel MMSI 413900364
+2026-06-19 06:22:16 | WARNING | C06-CONSUMER | Errors: ['Required field is blank: ship_name']
+2026-06-19 06:22:16 | INFO | C06-CONSUMER | Forwarded & Logged: MMSI=413465130 Name='HUIWAN306' Risk=LOW SOG=0 knots
+2026-06-19 06:22:16 | WARNING | C06-CONSUMER | Validation failed for vessel MMSI 413762732
+2026-06-19 06:22:16 | WARNING | C06-CONSUMER | Errors: ['Required field is blank: ship_name']
+2026-06-19 06:22:16 | INFO | C06-CONSUMER | Forwarded & Logged: MMSI=413543480 Name='AN YANG 118' Risk=LOW SOG=0 knots
+2026-06-19 06:22:16 | INFO | C06-CONSUMER | Forwarded & Logged: MMSI=413474470 Name='MINGHANG787' Risk=LOW SOG=6.8 knots
+2026-06-19 06:22:16 | INFO | C06-CONSUMER | Forwarded & Logged: MMSI=413902744 Name='ZHUCHUAN995' Risk=LOW SOG=0 knots
+2026-06-19 06:22:17 | INFO | C06-CONSUMER | Forwarded & Logged: MMSI=413469660 Name='ZHENYUAN288' Risk=LOW SOG=0 knots
+2026-06-19 06:22:17 | INFO | C06-CONSUMER | Forwarded & Logged: MMSI=413855543 Name='ZHIHANG628' Risk=LOW SOG=0 knots
+2026-06-19 06:22:17 | INFO | C06-CONSUMER | Forwarded & Logged: MMSI=413865389 Name='ZHONGHANG927' Risk=LOW SOG=0.1 knots
+2026-06-19 06:22:17 | INFO | C06-CONSUMER | Forwarded & Logged: MMSI=413342580 Name='LIAN YANG JUN 6' Risk=LOW SOG=8.3 knots
+2026-06-19 06:22:17 | INFO | C06-CONSUMER | Forwarded & Logged: MMSI=413906659 Name='YUEGUANGZHOUHUO2933' Risk=LOW SOG=None knots
+2026-06-19 06:22:17 | INFO | C06-CONSUMER | Forwarded & Logged: MMSI=413391750 Name='NANFANGHAIGONG' Risk=LOW SOG=0 knots
+2026-06-19 06:22:17 | INFO | C06-CONSUMER | Forwarded & Logged: MMSI=413543480 Name='AN YANG 118' Risk=LOW SOG=0 knots
+2026-06-19 06:22:17 | WARNING | C06-CONSUMER | Validation failed for vessel MMSI 413865532
+2026-06-19 06:22:17 | WARNING | C06-CONSUMER | Errors: ['Required field is blank: ship_name']
+2026-06-19 06:22:17 | INFO | C06-CONSUMER | Forwarded & Logged: MMSI=413995708 Name='ZHIHANG188' Risk=LOW SOG=2.5 knots
+2026-06-19 06:22:17 | INFO | C06-CONSUMER | Forwarded & Logged: MMSI=412484000 Name='JIN PU DONG HAI' Risk=LOW SOG=11.8 knots
+2026-06-19 06:22:17 | INFO | C06-CONSUMER | Forwarded & Logged: MMSI=413495980 Name='HUIJINQIAO299' Risk=LOW SOG=0.1 knots
+2026-06-19 06:22:17 | INFO | C06-CONSUMER | Forwarded & Logged: MMSI=413314440 Name='XIN MING ZHOU 92' Risk=LOW SOG=None knots
+2026-06-19 06:22:18 | INFO | C06-CONSUMER | Forwarded & Logged: MMSI=413873523 Name='FULI901' Risk=LOW SOG=None knots
+2026-06-19 06:22:18 | INFO | C06-CONSUMER | Forwarded & Logged: MMSI=412472910 Name='FULI288' Risk=LOW SOG=0.1 knots
+2026-06-19 06:22:18 | INFO | C06-CONSUMER | Forwarded & Logged: MMSI=413210920 Name='HAI XIN YOU 619' Risk=LOW SOG=0 knots
+2026-06-19 06:22:18 | WARNING | C06-CONSUMER | Validation failed for vessel MMSI 4125706
+2026-06-19 06:22:18 | WARNING | C06-CONSUMER | Errors: ['Required field is blank: ship_name']
+2026-06-19 06:22:18 | INFO | C06-CONSUMER | Forwarded & Logged: MMSI=412371260 Name='SMC MAGELLAN' Risk=LOW SOG=0 knots
+2026-06-19 06:22:18 | INFO | C06-CONSUMER | Forwarded & Logged: MMSI=414351850 Name='YANGWANG1' Risk=LOW SOG=0 knots
+2026-06-19 06:22:18 | INFO | C06-CONSUMER | Forwarded & Logged: MMSI=413800827 Name='QIJI636' Risk=LOW SOG=None knots
+2026-06-19 06:22:18 | INFO | C06-CONSUMER | Forwarded & Logged: MMSI=413543480 Name='AN YANG 118' Risk=LOW SOG=0 knots
+2026-06-19 06:22:18 | INFO | C06-CONSUMER | Forwarded & Logged: MMSI=413840761 Name='TAIHUAHANG 868' Risk=LOW SOG=0 knots
+2026-06-19 06:22:18 | INFO | C06-CONSUMER | Forwarded & Logged: MMSI=413905922 Name='YUEGUANGZHOUHUO1933' Risk=LOW SOG=0.1 knots
+2026-06-19 06:22:18 | WARNING | C06-CONSUMER | Validation failed for vessel MMSI 4125706
+2026-06-19 06:22:18 | WARNING | C06-CONSUMER | Errors: ['Required field is blank: ship_name']
+2026-06-19 06:22:19 | INFO | C06-CONSUMER | Forwarded & Logged: MMSI=413295960 Name='QING YUN HE' Risk=LOW SOG=None knots
+2026-06-19 06:22:19 | INFO | C06-CONSUMER | Forwarded & Logged: MMSI=413496590 Name='ZHONG SHAN 6' Risk=LOW SOG=None knots
+2026-06-19 06:22:19 | INFO | C06-CONSUMER | Forwarded & Logged: MMSI=412401780 Name='NAN GANG 86' Risk=LOW SOG=8.1 knots
+2026-06-19 06:22:19 | INFO | C06-CONSUMER | Forwarded & Logged: MMSI=413856971 Name='HUIXINHUI283' Risk=LOW SOG=6.3 knots
+2026-06-19 06:22:19 | INFO | C06-CONSUMER | Forwarded & Logged: MMSI=413494920 Name='YIN ZHU HU' Risk=LOW SOG=0.2 knots
+2026-06-19 06:22:19 | INFO | C06-CONSUMER | Forwarded & Logged: MMSI=413228010 Name='EN ZE' Risk=LOW SOG=None knots
+2026-06-19 06:22:19 | INFO | C06-CONSUMER | Forwarded & Logged: MMSI=413504220 Name='JIN HAI 667' Risk=LOW SOG=0 knots
+2026-06-19 06:22:19 | INFO | C06-CONSUMER | Forwarded & Logged: MMSI=413695760 Name='DONG FANG QIANG' Risk=LOW SOG=0 knots
+2026-06-19 06:22:19 | INFO | C06-CONSUMER | Forwarded & Logged: MMSI=412379470 Name='CHANG YI 10' Risk=LOW SOG=0 knots
+2026-06-19 06:22:20 | INFO | C06-CONSUMER | Forwarded & Logged: MMSI=413479290 Name='HENG  YU  93' Risk=LOW SOG=0 knots
+2026-06-19 06:22:20 | INFO | C06-CONSUMER | Forwarded & Logged: MMSI=413314440 Name='XIN MING ZHOU 92' Risk=LOW SOG=0 knots
+2026-06-19 06:22:20 | INFO | C06-CONSUMER | Forwarded & Logged: MMSI=413228010 Name='EN ZE' Risk=LOW SOG=5.7 knots
+2026-06-19 06:22:20 | INFO | C06-CONSUMER | Forwarded & Logged: MMSI=413495980 Name='HUIJINQIAO299' Risk=LOW SOG=0 knots
+2026-06-19 06:22:20 | INFO | C06-CONSUMER | Forwarded & Logged: MMSI=413465130 Name='HUIWAN306' Risk=LOW SOG=0 knots
+2026-06-19 06:22:20 | INFO | C06-CONSUMER | Forwarded & Logged: MMSI=413856105 Name='FENG NIAN 99' Risk=LOW SOG=0.2 knots
+2026-06-19 06:22:20 | INFO | C06-CONSUMER | Forwarded & Logged: MMSI=413543480 Name='AN YANG 118' Risk=LOW SOG=0 knots
+2026-06-19 06:22:20 | INFO | C06-CONSUMER | Forwarded & Logged: MMSI=413900364 Name='BOSHIHANG8' Risk=LOW SOG=None knots
+2026-06-19 06:22:20 | INFO | C06-CONSUMER | Forwarded & Logged: MMSI=413310890 Name='NANHANG717' Risk=LOW SOG=0.3 knots
+2026-06-19 06:22:22 | WARNING | C06-CONSUMER | Validation failed for vessel MMSI 4132703
+2026-06-19 06:22:22 | WARNING | C06-CONSUMER | Errors: ['Required field is blank: ship_name']
+2026-06-19 06:22:24 | INFO | C06-CONSUMER | Forwarded & Logged: MMSI=413342580 Name='LIAN YANG JUN 6' Risk=LOW SOG=8.2 knots
+2026-06-19 06:22:31 | INFO | C06-CONSUMER | Forwarded & Logged: MMSI=413391750 Name='NANFANGHAIGONG' Risk=LOW SOG=0 knots
+2026-06-19 06:22:32 | INFO | C06-CONSUMER | Forwarded & Logged: MMSI=413228010 Name='EN ZE' Risk=LOW SOG=5.7 knots
+2026-06-19 06:22:42 | INFO | C06-CONSUMER | Forwarded & Logged: MMSI=413543480 Name='AN YANG 118' Risk=LOW SOG=0 knots
+2026-06-19 06:22:43 | INFO | C06-CONSUMER | Forwarded & Logged: MMSI=413800827 Name='QIJI636' Risk=LOW SOG=0 knots
+2026-06-19 06:22:48 | INFO | C06-CONSUMER | Forwarded & Logged: MMSI=413862375 Name='BAOFENG2' Risk=LOW SOG=None knots
+2026-06-19 06:22:49 | INFO | P06-PRODUCER | Forwarded 70 Chinese vessel telemetry messages. Latest: MMSI=412465430 Name='CHI GANG TUO 8' type=PositionReport
+2026-06-19 06:22:49 | INFO | C06-CONSUMER | Forwarded & Logged: MMSI=412465430 Name='CHI GANG TUO 8' Risk=LOW SOG=0.7 knots
+2026-06-19 06:22:50 | INFO | C06-CONSUMER | Forwarded & Logged: MMSI=413495980 Name='HUIJINQIAO299' Risk=LOW SOG=0 knots
+2026-06-19 06:22:54 | INFO | C06-CONSUMER | Forwarded & Logged: MMSI=412472910 Name='FULI288' Risk=LOW SOG=0.2 knots
+2026-06-19 06:23:05 | INFO | C06-CONSUMER | No message received within 10.0s timeout.
+2026-06-19 06:23:05 | INFO | C06-CONSUMER | Producer finished or paused. Stopping consumer.
+2026-06-19 06:23:05 | INFO | C06-CONSUMER | Kafka consumer closed.
+2026-06-19 06:23:05 | INFO | C06-CONSUMER | Saving artifacts...
+2026-06-19 06:23:05 | INFO | C06-CONSUMER | WROTE OUTPUT_CSV = data\output\consumed_ais.csv
+2026-06-19 06:23:05 | INFO | C06-CONSUMER | WROTE OUTPUT_DB = data\output\ais.duckdb
+2026-06-19 06:23:05 | INFO | C06-CONSUMER | Summary:
+2026-06-19 06:23:05 | INFO | C06-CONSUMER | Consumed 64 message(s) from topic 'mda-vessels-topic-ag'.
+2026-06-19 06:23:05 | INFO | C06-CONSUMER | Skipped  8 message(s) due to validation errors.
+2026-06-19 06:23:05 | INFO | C06-CONSUMER |   Total messages processed: 64
+2026-06-19 06:23:05 | INFO | C06-CONSUMER |   Average operational speed: 1.38 knots
+2026-06-19 06:23:05 | INFO | C06-CONSUMER |   Maximum speed tracked:    11.80 knots
+2026-06-19 06:23:05 | INFO | C06-STORAGE | DuckDB Valid AIS Telemetry Rows: 64
+2026-06-19 06:23:05 | INFO | C06-STORAGE | DuckDB Rejected Telemetry Rows: 8
+2026-06-19 06:23:05 | INFO | C06-STORAGE | DuckDB Count by Risk Level:
+2026-06-19 06:23:05 | INFO | C06-STORAGE |   LOW: 64
+2026-06-19 06:23:05 | INFO | C06-STORAGE | DuckDB Count by Vessel Category:
+2026-06-19 06:23:05 | INFO | C06-STORAGE |   Government / Military (Other): 64
+2026-06-19 06:23:05 | INFO | C06-CONSUMER | ========================
+2026-06-19 06:23:05 | INFO | C06-CONSUMER | AIS Consumer executed successfully!
+2026-06-19 06:23:05 | INFO | C06-CONSUMER | ========================
+2026-06-19 06:23:34 | INFO | P06-PRODUCER | Forwarded 80 Chinese vessel telemetry messages. Latest: MMSI=413906647 Name='FENGNIAN 96' type=StandardClassBPositionReport
+2026-06-19 06:24:17 | INFO | P06-PRODUCER | Forwarded 90 Chinese vessel telemetry messages. Latest: MMSI=412379470 Name='CHANG YI 10' type=PositionReport
+2026-06-19 06:24:55 | INFO | P06-PRODUCER | Forwarded 100 Chinese vessel telemetry messages. Latest: MMSI=412484000 Name='JIN PU DONG HAI' type=PositionReport
+2026-06-19 06:25:40 | INFO | P06-PRODUCER | Forwarded 110 Chinese vessel telemetry messages. Latest: MMSI=413310890 Name='NANHANG717' type=PositionReport
+2026-06-19 06:26:21 | INFO | P06-PRODUCER | Forwarded 120 Chinese vessel telemetry messages. Latest: MMSI=412476860 Name='SHE GANG 9 HAO' type=PositionReport
+2026-06-19 06:27:06 | INFO | P06-PRODUCER | Forwarded 130 Chinese vessel telemetry messages. Latest: MMSI=413228010 Name='EN ZE' type=StaticDataReport
+2026-06-19 06:28:03 | INFO | P06-PRODUCER | Forwarded 140 Chinese vessel telemetry messages. Latest: MMSI=413577330 Name='SHUN TAI18' type=ShipStaticData
+2026-06-19 06:28:36 | INFO | P06-PRODUCER | Forwarded 150 Chinese vessel telemetry messages. Latest: MMSI=413855543 Name='ZHIHANG628' type=StandardClassBPositionReport
