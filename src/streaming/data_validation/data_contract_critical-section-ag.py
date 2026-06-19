@@ -76,8 +76,9 @@ def validate_ais_record(
     errors: list[str] = []
 
     # 1. Validate required fields
+    str_record = {k: str(v) if v is not None else "" for k, v in record.items()}
     errors.extend(
-        validate_required_fields(record=record, required_fields=AIS_REQUIRED_FIELDS)
+        validate_required_fields(record=str_record, required_fields=AIS_REQUIRED_FIELDS)
     )
 
     if errors:

@@ -500,3 +500,96 @@ CHECK:
    bin/kafka-topics.sh --list --bootstrap-server localhost:9092
 3. Verify the topic exists. Follow MANAGE_TOPIC.md.
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+2026-06-19 06:18:12 | DEBUG | P06-PRODUCER | KAFKA_BOOTSTRAP_SERVERS           = localhost:9092
+2026-06-19 06:18:12 | DEBUG | P06-PRODUCER | KAFKA_BROKER_ADDRESS_FAMILY       = v6
+2026-06-19 06:18:12 | DEBUG | P06-PRODUCER | KAFKA_TOPIC                       = mda-vessels-topic-ag
+2026-06-19 06:18:12 | DEBUG | P06-PRODUCER | KAFKA_CLEAR_TOPIC_ON_START        = true
+2026-06-19 06:18:12 | DEBUG | P06-PRODUCER | PRODUCER_MESSAGE_COUNT            = 3
+2026-06-19 06:18:12 | DEBUG | P06-PRODUCER | PRODUCER_MESSAGE_INTERVAL_SECONDS = 2
+2026-06-19 06:18:12 | DEBUG | P06-PRODUCER | PRODUCER_MAX_MESSAGES             = 50
+2026-06-19 06:18:12 | DEBUG | P06-PRODUCER | PRODUCER_POLL_INTERVAL_SECONDS    = 15
+2026-06-19 06:18:12 | DEBUG | P06-PRODUCER | KAFKA_GROUP_ID                    = streaming-consumer-group-A
+2026-06-19 06:18:12 | DEBUG | P06-PRODUCER | KAFKA_AUTO_OFFSET_RESET           = earliest
+2026-06-19 06:18:12 | DEBUG | P06-PRODUCER | CONSUMER_TIMEOUT_SECONDS          = 10
+2026-06-19 06:18:12 | DEBUG | P06-PRODUCER | CONSUMER_MAX_MESSAGES             = 1000
+2026-06-19 06:18:12 | DEBUG | P06-PRODUCER | AISSTREAM_API_KEY                 = ee7ff9340b731621f9d94097b7d23f6293607c06
+2026-06-19 06:18:13 | INFO | P06-PRODUCER | === RUN START ===
+2026-06-19 06:18:13 | INFO | P06-PRODUCER | project=P06-AIS-PRODUCER
+2026-06-19 06:18:13 | INFO | P06-PRODUCER | repo_dir=streaming-06-scenarios
+2026-06-19 06:18:13 | INFO | P06-PRODUCER | python=3.14.5
+2026-06-19 06:18:13 | INFO | P06-PRODUCER | os=Windows 11
+2026-06-19 06:18:13 | INFO | P06-PRODUCER | shell=powershell
+2026-06-19 06:18:13 | INFO | P06-PRODUCER | cwd=.
+2026-06-19 06:18:13 | INFO | P06-PRODUCER | github_actions=False
+2026-06-19 06:18:13 | INFO | P06-PRODUCER | =================================
+2026-06-19 06:18:13 | INFO | P06-PRODUCER | START AISStream Kafka Producer
+2026-06-19 06:18:13 | INFO | P06-PRODUCER | =================================
+2026-06-19 06:18:13 | INFO | P06-PRODUCER | ROOT_DIR = .
+2026-06-19 06:18:13 | INFO | P06-PRODUCER | Loading settings from .env...
+2026-06-19 06:18:13 | INFO | P06-PRODUCER | KAFKA_BOOTSTRAP_SERVERS    = localhost:9092
+2026-06-19 06:18:13 | INFO | P06-PRODUCER | KAFKA_TOPIC                = mda-vessels-topic-ag
+2026-06-19 06:18:13 | INFO | P06-PRODUCER | AISSTREAM_API_KEY Presence = Present (len=40)
+2026-06-19 06:18:13 | INFO | P06-PRODUCER | Verifying Kafka connection...
+2026-06-19 06:18:13 | INFO | P06-PRODUCER | Kafka port is reachable.
+2026-06-19 06:18:13 | INFO | P06-PRODUCER | Connecting to AISStream WebSocket at wss://stream.aisstream.io/v0/stream...
+2026-06-19 06:18:13 | INFO | P06-PRODUCER | Monitoring Bounding Box: [[[0.0, 100.0], [45.0, 140.0]]]
+2026-06-19 06:18:16 | INFO | P06-PRODUCER | WebSocket connection established. Sending subscription payload...
+2026-06-19 06:18:16 | INFO | P06-PRODUCER | Subscription sent successfully. Listening for live AIS messages...
+2026-06-19 06:18:17 | INFO | P06-PRODUCER | Forwarded 1 Chinese vessel telemetry messages. Latest: MMSI=413504220 Name='JIN HAI 667' type=PositionReport
+2026-06-19 06:18:34 | INFO | P06-PRODUCER | Forwarded 10 Chinese vessel telemetry messages. Latest: MMSI=412400040 Name='SHENG PING189' type=PositionReport
+2026-06-19 06:19:07 | DEBUG | C06-CONSUMER | KAFKA_BOOTSTRAP_SERVERS           = localhost:9092
+2026-06-19 06:19:07 | DEBUG | C06-CONSUMER | KAFKA_BROKER_ADDRESS_FAMILY       = v6
+2026-06-19 06:19:07 | DEBUG | C06-CONSUMER | KAFKA_TOPIC                       = mda-vessels-topic-ag
+2026-06-19 06:19:07 | DEBUG | C06-CONSUMER | KAFKA_CLEAR_TOPIC_ON_START        = true
+2026-06-19 06:19:07 | DEBUG | C06-CONSUMER | PRODUCER_MESSAGE_COUNT            = 3
+2026-06-19 06:19:07 | DEBUG | C06-CONSUMER | PRODUCER_MESSAGE_INTERVAL_SECONDS = 2
+2026-06-19 06:19:07 | DEBUG | C06-CONSUMER | PRODUCER_MAX_MESSAGES             = 50
+2026-06-19 06:19:07 | DEBUG | C06-CONSUMER | PRODUCER_POLL_INTERVAL_SECONDS    = 15
+2026-06-19 06:19:07 | DEBUG | C06-CONSUMER | KAFKA_GROUP_ID                    = streaming-consumer-group-A
+2026-06-19 06:19:07 | DEBUG | C06-CONSUMER | KAFKA_AUTO_OFFSET_RESET           = earliest
+2026-06-19 06:19:07 | DEBUG | C06-CONSUMER | CONSUMER_TIMEOUT_SECONDS          = 10
+2026-06-19 06:19:07 | DEBUG | C06-CONSUMER | CONSUMER_MAX_MESSAGES             = 1000
+2026-06-19 06:19:07 | DEBUG | C06-CONSUMER | AISSTREAM_API_KEY                 = ee7ff9340b731621f9d94097b7d23f6293607c06
+2026-06-19 06:19:07 | INFO | C06-CONSUMER | === RUN START ===
+2026-06-19 06:19:07 | INFO | C06-CONSUMER | project=C06-AIS-CONSUMER
+2026-06-19 06:19:07 | INFO | C06-CONSUMER | repo_dir=streaming-06-scenarios
+2026-06-19 06:19:07 | INFO | C06-CONSUMER | python=3.14.5
+2026-06-19 06:19:07 | INFO | C06-CONSUMER | os=Windows 11
+2026-06-19 06:19:07 | INFO | C06-CONSUMER | shell=powershell
+2026-06-19 06:19:07 | INFO | C06-CONSUMER | cwd=.
+2026-06-19 06:19:07 | INFO | C06-CONSUMER | github_actions=False
+2026-06-19 06:19:07 | INFO | C06-CONSUMER | ========================
+2026-06-19 06:19:07 | INFO | C06-CONSUMER | START AIS consumer main()
+2026-06-19 06:19:07 | INFO | C06-CONSUMER | ========================
+2026-06-19 06:19:07 | INFO | C06-CONSUMER | ROOT_DIR = .
+2026-06-19 06:19:07 | INFO | C06-CONSUMER | DATA_DIR = data
+2026-06-19 06:19:07 | INFO | C06-CONSUMER | OUTPUT_CSV = data\output\consumed_ais.csv
+2026-06-19 06:19:07 | INFO | C06-CONSUMER | OUTPUT_DB = data\output\ais.duckdb
+2026-06-19 06:19:07 | INFO | C06-CONSUMER | Loading settings from .env...
+2026-06-19 06:19:07 | INFO | C06-CONSUMER | KAFKA_BOOTSTRAP_SERVERS  = localhost:9092
+2026-06-19 06:19:07 | INFO | C06-CONSUMER | KAFKA_TOPIC              = mda-vessels-topic-ag
+2026-06-19 06:19:07 | INFO | C06-CONSUMER | KAFKA_GROUP_ID           = streaming-consumer-group-A
+2026-06-19 06:19:07 | INFO | C06-CONSUMER | CONSUMER_TIMEOUT_SECONDS = 10.0
+2026-06-19 06:19:07 | INFO | C06-CONSUMER | CONSUMER_MAX_MESSAGES    = 1000
+2026-06-19 06:19:07 | INFO | C06-CONSUMER | Verifying Kafka connection...
+2026-06-19 06:19:07 | INFO | C06-CONSUMER | Kafka port is reachable.
+2026-06-19 06:19:07 | INFO | C06-CONSUMER | Verifying Kafka topic...
+2026-06-19 06:19:13 | INFO | P06-PRODUCER | Forwarded 20 Chinese vessel telemetry messages. Latest: MMSI=413474470 Name='MINGHANG787' type=PositionReport
+2026-06-19 06:19:15 | INFO | C06-CONSUMER | Topic 'mda-vessels-topic-ag' exists.
+2026-06-19 06:19:15 | INFO | C06-CONSUMER | Found 21 message(s) available in topic.
+2026-06-19 06:19:15 | INFO | C06-CONSUMER | Creating Kafka consumer...
+2026-06-19 06:19:15 | INFO | C06-CONSUMER | Subscribed to topic: 'mda-vessels-topic-ag' (reading from beginning)
+2026-06-19 06:19:15 | INFO | C06-CONSUMER | Initializing output...
+2026-06-19 06:19:15 | INFO | C06-CONSUMER | Output CSV cleared: consumed_ais.csv
+2026-06-19 06:19:15 | INFO | C06-STORAGE | Initialized tables consumed_valid_ais and consumed_rejected_ais in DuckDB.
+2026-06-19 06:19:15 | INFO | C06-STORAGE | Cleared storage tables.
+2026-06-19 06:19:15 | INFO | C06-CONSUMER | Database initialized: ais.duckdb
+2026-06-19 06:19:15 | INFO | C06-CONSUMER | Live chart initialized.
+2026-06-19 06:19:15 | INFO | C06-CONSUMER | Consuming messages...
+2026-06-19 06:19:15 | INFO | C06-CONSUMER | Waiting for up to 1000 message(s).
+2026-06-19 06:19:15 | INFO | C06-CONSUMER | Press CTRL+C to stop early.
+
+2026-06-19 06:19:20 | INFO | C06-CONSUMER | Kafka consumer closed.
+2026-06-19 06:19:39 | INFO | P06-PRODUCER | Forwarded 30 Chinese vessel telemetry messages. Latest: MMSI=413995708 Name='ZHIHANG188' type=PositionReport
+2026-06-19 06:20:11 | INFO | P06-PRODUCER | Forwarded 40 Chinese vessel telemetry messages. Latest: MMSI=413800827 Name='QIJI636' type=StaticDataReport
+2026-06-19 06:21:06 | INFO | P06-PRODUCER | Forwarded 50 Chinese vessel telemetry messages. Latest: MMSI=413228010 Name='EN ZE' type=StaticDataReport
