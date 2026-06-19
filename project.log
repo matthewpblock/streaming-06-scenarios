@@ -263,3 +263,240 @@
 2026-06-17 15:33:48 | INFO | C06 | ========================
 2026-06-17 15:33:48 | INFO | C06 | Consumer executed successfully!
 2026-06-17 15:33:48 | INFO | C06 | ========================
+2026-06-19 05:56:09 | DEBUG | P06-PRODUCER | KAFKA_BOOTSTRAP_SERVERS           = localhost:9092
+2026-06-19 05:56:09 | DEBUG | P06-PRODUCER | KAFKA_BROKER_ADDRESS_FAMILY       = v6
+2026-06-19 05:56:09 | DEBUG | P06-PRODUCER | KAFKA_TOPIC                       = streaming-06-scenarios-case
+2026-06-19 05:56:09 | DEBUG | P06-PRODUCER | KAFKA_CLEAR_TOPIC_ON_START        = true
+2026-06-19 05:56:09 | DEBUG | P06-PRODUCER | PRODUCER_MESSAGE_COUNT            = 3
+2026-06-19 05:56:09 | DEBUG | P06-PRODUCER | PRODUCER_MESSAGE_INTERVAL_SECONDS = 2
+2026-06-19 05:56:09 | DEBUG | P06-PRODUCER | PRODUCER_MAX_MESSAGES             = 50
+2026-06-19 05:56:09 | DEBUG | P06-PRODUCER | PRODUCER_POLL_INTERVAL_SECONDS    = 15
+2026-06-19 05:56:09 | DEBUG | P06-PRODUCER | KAFKA_GROUP_ID                    = streaming-consumer-group-A
+2026-06-19 05:56:09 | DEBUG | P06-PRODUCER | KAFKA_AUTO_OFFSET_RESET           = earliest
+2026-06-19 05:56:09 | DEBUG | P06-PRODUCER | CONSUMER_TIMEOUT_SECONDS          = 10
+2026-06-19 05:56:09 | DEBUG | P06-PRODUCER | CONSUMER_MAX_MESSAGES             = 1000
+2026-06-19 05:56:09 | INFO | P06-PRODUCER | === RUN START ===
+2026-06-19 05:56:09 | INFO | P06-PRODUCER | project=P06-AIS-PRODUCER
+2026-06-19 05:56:09 | INFO | P06-PRODUCER | repo_dir=streaming-06-scenarios
+2026-06-19 05:56:09 | INFO | P06-PRODUCER | python=3.14.5
+2026-06-19 05:56:09 | INFO | P06-PRODUCER | os=Windows 11
+2026-06-19 05:56:09 | INFO | P06-PRODUCER | shell=powershell
+2026-06-19 05:56:09 | INFO | P06-PRODUCER | cwd=.
+2026-06-19 05:56:09 | INFO | P06-PRODUCER | github_actions=False
+2026-06-19 05:56:09 | INFO | P06-PRODUCER | =================================
+2026-06-19 05:56:09 | INFO | P06-PRODUCER | START AISStream Kafka Producer
+2026-06-19 05:56:09 | INFO | P06-PRODUCER | =================================
+2026-06-19 05:56:09 | INFO | P06-PRODUCER | ROOT_DIR = .
+2026-06-19 05:56:09 | INFO | P06-PRODUCER | Loading settings from .env...
+2026-06-19 05:56:11 | DEBUG | C06-CONSUMER | KAFKA_BOOTSTRAP_SERVERS           = localhost:9092
+2026-06-19 05:56:11 | DEBUG | C06-CONSUMER | KAFKA_BROKER_ADDRESS_FAMILY       = v6
+2026-06-19 05:56:11 | DEBUG | C06-CONSUMER | KAFKA_TOPIC                       = streaming-06-scenarios-case
+2026-06-19 05:56:11 | DEBUG | C06-CONSUMER | KAFKA_CLEAR_TOPIC_ON_START        = true
+2026-06-19 05:56:11 | DEBUG | C06-CONSUMER | PRODUCER_MESSAGE_COUNT            = 3
+2026-06-19 05:56:11 | DEBUG | C06-CONSUMER | PRODUCER_MESSAGE_INTERVAL_SECONDS = 2
+2026-06-19 05:56:11 | DEBUG | C06-CONSUMER | PRODUCER_MAX_MESSAGES             = 50
+2026-06-19 05:56:11 | DEBUG | C06-CONSUMER | PRODUCER_POLL_INTERVAL_SECONDS    = 15
+2026-06-19 05:56:11 | DEBUG | C06-CONSUMER | KAFKA_GROUP_ID                    = streaming-consumer-group-A
+2026-06-19 05:56:11 | DEBUG | C06-CONSUMER | KAFKA_AUTO_OFFSET_RESET           = earliest
+2026-06-19 05:56:11 | DEBUG | C06-CONSUMER | CONSUMER_TIMEOUT_SECONDS          = 10
+2026-06-19 05:56:11 | DEBUG | C06-CONSUMER | CONSUMER_MAX_MESSAGES             = 1000
+2026-06-19 05:56:11 | INFO | C06-CONSUMER | === RUN START ===
+2026-06-19 05:56:11 | INFO | C06-CONSUMER | project=C06-AIS-CONSUMER
+2026-06-19 05:56:11 | INFO | C06-CONSUMER | repo_dir=streaming-06-scenarios
+2026-06-19 05:56:11 | INFO | C06-CONSUMER | python=3.14.5
+2026-06-19 05:56:11 | INFO | C06-CONSUMER | os=Windows 11
+2026-06-19 05:56:11 | INFO | C06-CONSUMER | shell=powershell
+2026-06-19 05:56:11 | INFO | C06-CONSUMER | cwd=.
+2026-06-19 05:56:11 | INFO | C06-CONSUMER | github_actions=False
+2026-06-19 05:56:11 | INFO | C06-CONSUMER | ========================
+2026-06-19 05:56:11 | INFO | C06-CONSUMER | START AIS consumer main()
+2026-06-19 05:56:11 | INFO | C06-CONSUMER | ========================
+2026-06-19 05:56:11 | INFO | C06-CONSUMER | ROOT_DIR = .
+2026-06-19 05:56:11 | INFO | C06-CONSUMER | DATA_DIR = data
+2026-06-19 05:56:11 | INFO | C06-CONSUMER | OUTPUT_CSV = data\output\consumed_ais.csv
+2026-06-19 05:56:11 | INFO | C06-CONSUMER | OUTPUT_DB = data\output\ais.duckdb
+2026-06-19 05:56:11 | INFO | C06-CONSUMER | Loading settings from .env...
+2026-06-19 05:56:45 | DEBUG | P06-PRODUCER | KAFKA_BOOTSTRAP_SERVERS           = localhost:9092
+2026-06-19 05:56:45 | DEBUG | P06-PRODUCER | KAFKA_BROKER_ADDRESS_FAMILY       = v6
+2026-06-19 05:56:45 | DEBUG | P06-PRODUCER | KAFKA_TOPIC                       = streaming-06-scenarios-case
+2026-06-19 05:56:45 | DEBUG | P06-PRODUCER | KAFKA_CLEAR_TOPIC_ON_START        = true
+2026-06-19 05:56:45 | DEBUG | P06-PRODUCER | PRODUCER_MESSAGE_COUNT            = 3
+2026-06-19 05:56:45 | DEBUG | P06-PRODUCER | PRODUCER_MESSAGE_INTERVAL_SECONDS = 2
+2026-06-19 05:56:45 | DEBUG | P06-PRODUCER | PRODUCER_MAX_MESSAGES             = 50
+2026-06-19 05:56:45 | DEBUG | P06-PRODUCER | PRODUCER_POLL_INTERVAL_SECONDS    = 15
+2026-06-19 05:56:45 | DEBUG | P06-PRODUCER | KAFKA_GROUP_ID                    = streaming-consumer-group-A
+2026-06-19 05:56:45 | DEBUG | P06-PRODUCER | KAFKA_AUTO_OFFSET_RESET           = earliest
+2026-06-19 05:56:45 | DEBUG | P06-PRODUCER | CONSUMER_TIMEOUT_SECONDS          = 10
+2026-06-19 05:56:45 | DEBUG | P06-PRODUCER | CONSUMER_MAX_MESSAGES             = 1000
+2026-06-19 05:56:45 | INFO | P06-PRODUCER | === RUN START ===
+2026-06-19 05:56:45 | INFO | P06-PRODUCER | project=P06-AIS-PRODUCER
+2026-06-19 05:56:45 | INFO | P06-PRODUCER | repo_dir=streaming-06-scenarios
+2026-06-19 05:56:45 | INFO | P06-PRODUCER | python=3.14.5
+2026-06-19 05:56:45 | INFO | P06-PRODUCER | os=Windows 11
+2026-06-19 05:56:45 | INFO | P06-PRODUCER | shell=powershell
+2026-06-19 05:56:45 | INFO | P06-PRODUCER | cwd=.
+2026-06-19 05:56:45 | INFO | P06-PRODUCER | github_actions=False
+2026-06-19 05:56:45 | INFO | P06-PRODUCER | =================================
+2026-06-19 05:56:45 | INFO | P06-PRODUCER | START AISStream Kafka Producer
+2026-06-19 05:56:45 | INFO | P06-PRODUCER | =================================
+2026-06-19 05:56:45 | INFO | P06-PRODUCER | ROOT_DIR = .
+2026-06-19 05:56:45 | INFO | P06-PRODUCER | Loading settings from .env...
+2026-06-19 05:56:45 | INFO | P06-PRODUCER | KAFKA_BOOTSTRAP_SERVERS    = localhost:9092
+2026-06-19 05:56:45 | INFO | P06-PRODUCER | KAFKA_TOPIC                = mda-vessels-topic-ag
+2026-06-19 05:56:45 | INFO | P06-PRODUCER | AISSTREAM_API_KEY Presence = MISSING
+2026-06-19 05:56:45 | INFO | P06-PRODUCER | Verifying Kafka connection...
+2026-06-19 05:56:49 | ERROR | P06-PRODUCER | Kafka connection failed: !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+Python code is running,
+but Kafka is not available.
+Kafka is not reachable.
+The program tried to connect to:
+    KAFKA_BOOTSTRAP_SERVERS = localhost:9092
+
+CHECK:
+1. Start Kafka first. Follow START_KAFKA.md.
+2. Verify Kafka is running. In a terminal, run:
+   cd ~/kafka
+   bin/kafka-topics.sh --list --bootstrap-server localhost:9092
+3. Verify the topic exists. Follow MANAGE_TOPIC.md.
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+2026-06-19 05:56:52 | DEBUG | C06-CONSUMER | KAFKA_BOOTSTRAP_SERVERS           = localhost:9092
+2026-06-19 05:56:52 | DEBUG | C06-CONSUMER | KAFKA_BROKER_ADDRESS_FAMILY       = v6
+2026-06-19 05:56:52 | DEBUG | C06-CONSUMER | KAFKA_TOPIC                       = streaming-06-scenarios-case
+2026-06-19 05:56:52 | DEBUG | C06-CONSUMER | KAFKA_CLEAR_TOPIC_ON_START        = true
+2026-06-19 05:56:52 | DEBUG | C06-CONSUMER | PRODUCER_MESSAGE_COUNT            = 3
+2026-06-19 05:56:52 | DEBUG | C06-CONSUMER | PRODUCER_MESSAGE_INTERVAL_SECONDS = 2
+2026-06-19 05:56:52 | DEBUG | C06-CONSUMER | PRODUCER_MAX_MESSAGES             = 50
+2026-06-19 05:56:52 | DEBUG | C06-CONSUMER | PRODUCER_POLL_INTERVAL_SECONDS    = 15
+2026-06-19 05:56:52 | DEBUG | C06-CONSUMER | KAFKA_GROUP_ID                    = streaming-consumer-group-A
+2026-06-19 05:56:52 | DEBUG | C06-CONSUMER | KAFKA_AUTO_OFFSET_RESET           = earliest
+2026-06-19 05:56:52 | DEBUG | C06-CONSUMER | CONSUMER_TIMEOUT_SECONDS          = 10
+2026-06-19 05:56:52 | DEBUG | C06-CONSUMER | CONSUMER_MAX_MESSAGES             = 1000
+2026-06-19 05:56:52 | INFO | C06-CONSUMER | === RUN START ===
+2026-06-19 05:56:52 | INFO | C06-CONSUMER | project=C06-AIS-CONSUMER
+2026-06-19 05:56:52 | INFO | C06-CONSUMER | repo_dir=streaming-06-scenarios
+2026-06-19 05:56:52 | INFO | C06-CONSUMER | python=3.14.5
+2026-06-19 05:56:52 | INFO | C06-CONSUMER | os=Windows 11
+2026-06-19 05:56:52 | INFO | C06-CONSUMER | shell=powershell
+2026-06-19 05:56:52 | INFO | C06-CONSUMER | cwd=.
+2026-06-19 05:56:52 | INFO | C06-CONSUMER | github_actions=False
+2026-06-19 05:56:52 | INFO | C06-CONSUMER | ========================
+2026-06-19 05:56:52 | INFO | C06-CONSUMER | START AIS consumer main()
+2026-06-19 05:56:52 | INFO | C06-CONSUMER | ========================
+2026-06-19 05:56:52 | INFO | C06-CONSUMER | ROOT_DIR = .
+2026-06-19 05:56:52 | INFO | C06-CONSUMER | DATA_DIR = data
+2026-06-19 05:56:52 | INFO | C06-CONSUMER | OUTPUT_CSV = data\output\consumed_ais.csv
+2026-06-19 05:56:52 | INFO | C06-CONSUMER | OUTPUT_DB = data\output\ais.duckdb
+2026-06-19 05:56:52 | INFO | C06-CONSUMER | Loading settings from .env...
+2026-06-19 05:56:52 | INFO | C06-CONSUMER | KAFKA_BOOTSTRAP_SERVERS  = localhost:9092
+2026-06-19 05:56:52 | INFO | C06-CONSUMER | KAFKA_TOPIC              = mda-vessels-topic-ag
+2026-06-19 05:56:52 | INFO | C06-CONSUMER | KAFKA_GROUP_ID           = streaming-consumer-group-A
+2026-06-19 05:56:52 | INFO | C06-CONSUMER | CONSUMER_TIMEOUT_SECONDS = 10.0
+2026-06-19 05:56:52 | INFO | C06-CONSUMER | CONSUMER_MAX_MESSAGES    = 1000
+2026-06-19 05:56:52 | INFO | C06-CONSUMER | Verifying Kafka connection...
+2026-06-19 05:56:56 | ERROR | C06-CONSUMER | !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+Python code is running,
+but Kafka is not available.
+Kafka is not reachable.
+The program tried to connect to:
+    KAFKA_BOOTSTRAP_SERVERS = localhost:9092
+
+CHECK:
+1. Start Kafka first. Follow START_KAFKA.md.
+2. Verify Kafka is running. In a terminal, run:
+   cd ~/kafka
+   bin/kafka-topics.sh --list --bootstrap-server localhost:9092
+3. Verify the topic exists. Follow MANAGE_TOPIC.md.
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+2026-06-19 05:59:27 | DEBUG | P06-PRODUCER | KAFKA_BOOTSTRAP_SERVERS           = localhost:9092
+2026-06-19 05:59:27 | DEBUG | P06-PRODUCER | KAFKA_BROKER_ADDRESS_FAMILY       = v6
+2026-06-19 05:59:27 | DEBUG | P06-PRODUCER | KAFKA_TOPIC                       = streaming-06-scenarios-case
+2026-06-19 05:59:27 | DEBUG | P06-PRODUCER | KAFKA_CLEAR_TOPIC_ON_START        = true
+2026-06-19 05:59:27 | DEBUG | P06-PRODUCER | PRODUCER_MESSAGE_COUNT            = 3
+2026-06-19 05:59:27 | DEBUG | P06-PRODUCER | PRODUCER_MESSAGE_INTERVAL_SECONDS = 2
+2026-06-19 05:59:27 | DEBUG | P06-PRODUCER | PRODUCER_MAX_MESSAGES             = 50
+2026-06-19 05:59:27 | DEBUG | P06-PRODUCER | PRODUCER_POLL_INTERVAL_SECONDS    = 15
+2026-06-19 05:59:27 | DEBUG | P06-PRODUCER | KAFKA_GROUP_ID                    = streaming-consumer-group-A
+2026-06-19 05:59:27 | DEBUG | P06-PRODUCER | KAFKA_AUTO_OFFSET_RESET           = earliest
+2026-06-19 05:59:27 | DEBUG | P06-PRODUCER | CONSUMER_TIMEOUT_SECONDS          = 10
+2026-06-19 05:59:27 | DEBUG | P06-PRODUCER | CONSUMER_MAX_MESSAGES             = 1000
+2026-06-19 05:59:27 | DEBUG | P06-PRODUCER | AISSTREAM_API_KEY                 = ee7ff9340b731621f9d94097b7d23f6293607c06
+2026-06-19 05:59:27 | INFO | P06-PRODUCER | === RUN START ===
+2026-06-19 05:59:27 | INFO | P06-PRODUCER | project=P06-AIS-PRODUCER
+2026-06-19 05:59:27 | INFO | P06-PRODUCER | repo_dir=streaming-06-scenarios
+2026-06-19 05:59:27 | INFO | P06-PRODUCER | python=3.14.5
+2026-06-19 05:59:27 | INFO | P06-PRODUCER | os=Windows 11
+2026-06-19 05:59:27 | INFO | P06-PRODUCER | shell=powershell
+2026-06-19 05:59:27 | INFO | P06-PRODUCER | cwd=.
+2026-06-19 05:59:27 | INFO | P06-PRODUCER | github_actions=False
+2026-06-19 05:59:27 | INFO | P06-PRODUCER | =================================
+2026-06-19 05:59:27 | INFO | P06-PRODUCER | START AISStream Kafka Producer
+2026-06-19 05:59:27 | INFO | P06-PRODUCER | =================================
+2026-06-19 05:59:27 | INFO | P06-PRODUCER | ROOT_DIR = .
+2026-06-19 05:59:27 | INFO | P06-PRODUCER | Loading settings from .env...
+2026-06-19 05:59:27 | INFO | P06-PRODUCER | KAFKA_BOOTSTRAP_SERVERS    = localhost:9092
+2026-06-19 05:59:27 | INFO | P06-PRODUCER | KAFKA_TOPIC                = mda-vessels-topic-ag
+2026-06-19 05:59:27 | INFO | P06-PRODUCER | AISSTREAM_API_KEY Presence = Present (len=40)
+2026-06-19 05:59:27 | INFO | P06-PRODUCER | Verifying Kafka connection...
+2026-06-19 05:59:29 | DEBUG | C06-CONSUMER | KAFKA_BOOTSTRAP_SERVERS           = localhost:9092
+2026-06-19 05:59:29 | DEBUG | C06-CONSUMER | KAFKA_BROKER_ADDRESS_FAMILY       = v6
+2026-06-19 05:59:29 | DEBUG | C06-CONSUMER | KAFKA_TOPIC                       = streaming-06-scenarios-case
+2026-06-19 05:59:29 | DEBUG | C06-CONSUMER | KAFKA_CLEAR_TOPIC_ON_START        = true
+2026-06-19 05:59:29 | DEBUG | C06-CONSUMER | PRODUCER_MESSAGE_COUNT            = 3
+2026-06-19 05:59:29 | DEBUG | C06-CONSUMER | PRODUCER_MESSAGE_INTERVAL_SECONDS = 2
+2026-06-19 05:59:29 | DEBUG | C06-CONSUMER | PRODUCER_MAX_MESSAGES             = 50
+2026-06-19 05:59:29 | DEBUG | C06-CONSUMER | PRODUCER_POLL_INTERVAL_SECONDS    = 15
+2026-06-19 05:59:29 | DEBUG | C06-CONSUMER | KAFKA_GROUP_ID                    = streaming-consumer-group-A
+2026-06-19 05:59:29 | DEBUG | C06-CONSUMER | KAFKA_AUTO_OFFSET_RESET           = earliest
+2026-06-19 05:59:29 | DEBUG | C06-CONSUMER | CONSUMER_TIMEOUT_SECONDS          = 10
+2026-06-19 05:59:29 | DEBUG | C06-CONSUMER | CONSUMER_MAX_MESSAGES             = 1000
+2026-06-19 05:59:29 | DEBUG | C06-CONSUMER | AISSTREAM_API_KEY                 = ee7ff9340b731621f9d94097b7d23f6293607c06
+2026-06-19 05:59:29 | INFO | C06-CONSUMER | === RUN START ===
+2026-06-19 05:59:29 | INFO | C06-CONSUMER | project=C06-AIS-CONSUMER
+2026-06-19 05:59:29 | INFO | C06-CONSUMER | repo_dir=streaming-06-scenarios
+2026-06-19 05:59:29 | INFO | C06-CONSUMER | python=3.14.5
+2026-06-19 05:59:30 | INFO | C06-CONSUMER | os=Windows 11
+2026-06-19 05:59:30 | INFO | C06-CONSUMER | shell=powershell
+2026-06-19 05:59:30 | INFO | C06-CONSUMER | cwd=.
+2026-06-19 05:59:30 | INFO | C06-CONSUMER | github_actions=False
+2026-06-19 05:59:30 | INFO | C06-CONSUMER | ========================
+2026-06-19 05:59:30 | INFO | C06-CONSUMER | START AIS consumer main()
+2026-06-19 05:59:30 | INFO | C06-CONSUMER | ========================
+2026-06-19 05:59:30 | INFO | C06-CONSUMER | ROOT_DIR = .
+2026-06-19 05:59:30 | INFO | C06-CONSUMER | DATA_DIR = data
+2026-06-19 05:59:30 | INFO | C06-CONSUMER | OUTPUT_CSV = data\output\consumed_ais.csv
+2026-06-19 05:59:30 | INFO | C06-CONSUMER | OUTPUT_DB = data\output\ais.duckdb
+2026-06-19 05:59:30 | INFO | C06-CONSUMER | Loading settings from .env...
+2026-06-19 05:59:30 | INFO | C06-CONSUMER | KAFKA_BOOTSTRAP_SERVERS  = localhost:9092
+2026-06-19 05:59:30 | INFO | C06-CONSUMER | KAFKA_TOPIC              = mda-vessels-topic-ag
+2026-06-19 05:59:30 | INFO | C06-CONSUMER | KAFKA_GROUP_ID           = streaming-consumer-group-A
+2026-06-19 05:59:30 | INFO | C06-CONSUMER | CONSUMER_TIMEOUT_SECONDS = 10.0
+2026-06-19 05:59:30 | INFO | C06-CONSUMER | CONSUMER_MAX_MESSAGES    = 1000
+2026-06-19 05:59:30 | INFO | C06-CONSUMER | Verifying Kafka connection...
+2026-06-19 05:59:31 | ERROR | P06-PRODUCER | Kafka connection failed: !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+Python code is running,
+but Kafka is not available.
+Kafka is not reachable.
+The program tried to connect to:
+    KAFKA_BOOTSTRAP_SERVERS = localhost:9092
+
+CHECK:
+1. Start Kafka first. Follow START_KAFKA.md.
+2. Verify Kafka is running. In a terminal, run:
+   cd ~/kafka
+   bin/kafka-topics.sh --list --bootstrap-server localhost:9092
+3. Verify the topic exists. Follow MANAGE_TOPIC.md.
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+2026-06-19 05:59:34 | ERROR | C06-CONSUMER | !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+Python code is running,
+but Kafka is not available.
+Kafka is not reachable.
+The program tried to connect to:
+    KAFKA_BOOTSTRAP_SERVERS = localhost:9092
+
+CHECK:
+1. Start Kafka first. Follow START_KAFKA.md.
+2. Verify Kafka is running. In a terminal, run:
+   cd ~/kafka
+   bin/kafka-topics.sh --list --bootstrap-server localhost:9092
+3. Verify the topic exists. Follow MANAGE_TOPIC.md.
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!

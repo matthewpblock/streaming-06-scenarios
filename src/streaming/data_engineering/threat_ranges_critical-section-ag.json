@@ -1,0 +1,40 @@
+{
+  "vessel_types": {
+    "35": {
+      "category": "Military",
+      "threat_range_km": 100.0,
+      "risk_level": "CRITICAL",
+      "description": "Warship / Combatant"
+    },
+    "39": {
+      "category": "Patrol",
+      "threat_range_km": 50.0,
+      "risk_level": "HIGH",
+      "description": "Patrol / Guard Vessel"
+    },
+    "55": {
+      "category": "Law Enforcement",
+      "threat_range_km": 40.0,
+      "risk_level": "HIGH",
+      "description": "Coast Guard / Law Enforcement"
+    },
+    "59": {
+      "category": "Government Noncombatant",
+      "threat_range_km": 30.0,
+      "risk_level": "MEDIUM",
+      "description": "Government Auxiliary / Research Vessel"
+    },
+    "51": {
+      "category": "Search and Rescue",
+      "threat_range_km": 20.0,
+      "risk_level": "LOW",
+      "description": "Search and Rescue"
+    }
+  },
+  "default": {
+    "category": "Government / Military (Other)",
+    "threat_range_km": 15.0,
+    "risk_level": "LOW",
+    "description": "Unclassified Chinese Govt/Military Vessel"
+  }
+}
