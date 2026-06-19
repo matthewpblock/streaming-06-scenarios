@@ -2134,3 +2134,372 @@ CHECK:
 2026-06-19 09:17:18 | INFO | C06-CONSUMER | ========================
 2026-06-19 09:17:18 | INFO | C06-CONSUMER | AIS Consumer executed successfully!
 2026-06-19 09:17:18 | INFO | C06-CONSUMER | ========================
+2026-06-19 09:42:01 | DEBUG | C06-CONSUMER | KAFKA_BOOTSTRAP_SERVERS           = localhost:9092
+2026-06-19 09:42:01 | DEBUG | C06-CONSUMER | KAFKA_BROKER_ADDRESS_FAMILY       = v6
+2026-06-19 09:42:01 | DEBUG | C06-CONSUMER | KAFKA_TOPIC                       = mda-vessels-topic-ag
+2026-06-19 09:42:01 | DEBUG | C06-CONSUMER | KAFKA_CLEAR_TOPIC_ON_START        = true
+2026-06-19 09:42:01 | DEBUG | C06-CONSUMER | PRODUCER_MESSAGE_COUNT            = 3
+2026-06-19 09:42:01 | DEBUG | C06-CONSUMER | PRODUCER_MESSAGE_INTERVAL_SECONDS = 2
+2026-06-19 09:42:01 | DEBUG | C06-CONSUMER | PRODUCER_MAX_MESSAGES             = 50
+2026-06-19 09:42:01 | DEBUG | C06-CONSUMER | PRODUCER_POLL_INTERVAL_SECONDS    = 15
+2026-06-19 09:42:01 | DEBUG | C06-CONSUMER | KAFKA_GROUP_ID                    = streaming-consumer-group-A
+2026-06-19 09:42:01 | DEBUG | C06-CONSUMER | KAFKA_AUTO_OFFSET_RESET           = earliest
+2026-06-19 09:42:01 | DEBUG | C06-CONSUMER | CONSUMER_TIMEOUT_SECONDS          = 60
+2026-06-19 09:42:01 | DEBUG | C06-CONSUMER | CONSUMER_MAX_MESSAGES             = 1000
+2026-06-19 09:42:01 | DEBUG | C06-CONSUMER | AISSTREAM_API_KEY                 = ee7ff9340b731621f9d94097b7d23f6293607c06
+2026-06-19 09:42:01 | INFO | C06-CONSUMER | === RUN START ===
+2026-06-19 09:42:01 | INFO | C06-CONSUMER | project=C06-AIS-CONSUMER
+2026-06-19 09:42:01 | INFO | C06-CONSUMER | repo_dir=streaming-06-scenarios
+2026-06-19 09:42:01 | INFO | C06-CONSUMER | python=3.14.5
+2026-06-19 09:42:01 | INFO | C06-CONSUMER | os=Windows 11
+2026-06-19 09:42:01 | INFO | C06-CONSUMER | shell=powershell
+2026-06-19 09:42:01 | INFO | C06-CONSUMER | cwd=.
+2026-06-19 09:42:01 | INFO | C06-CONSUMER | github_actions=False
+2026-06-19 09:42:01 | INFO | C06-CONSUMER | ========================
+2026-06-19 09:42:01 | INFO | C06-CONSUMER | START AIS consumer main()
+2026-06-19 09:42:01 | INFO | C06-CONSUMER | ========================
+2026-06-19 09:42:01 | INFO | C06-CONSUMER | ROOT_DIR = .
+2026-06-19 09:42:01 | INFO | C06-CONSUMER | DATA_DIR = data
+2026-06-19 09:42:01 | INFO | C06-CONSUMER | OUTPUT_CSV = data\output\consumed_ais.csv
+2026-06-19 09:42:01 | INFO | C06-CONSUMER | OUTPUT_DB = data\output\ais.duckdb
+2026-06-19 09:42:01 | INFO | C06-CONSUMER | Loading settings from .env...
+2026-06-19 09:42:01 | INFO | C06-CONSUMER | KAFKA_BOOTSTRAP_SERVERS  = localhost:9092
+2026-06-19 09:42:01 | INFO | C06-CONSUMER | KAFKA_TOPIC              = mda-vessels-topic-ag
+2026-06-19 09:42:01 | INFO | C06-CONSUMER | KAFKA_GROUP_ID           = streaming-consumer-group-A
+2026-06-19 09:42:01 | INFO | C06-CONSUMER | CONSUMER_TIMEOUT_SECONDS = 60.0
+2026-06-19 09:42:01 | INFO | C06-CONSUMER | CONSUMER_MAX_MESSAGES    = 1000
+2026-06-19 09:42:01 | INFO | C06-CONSUMER | Verifying Kafka connection...
+2026-06-19 09:42:05 | ERROR | C06-CONSUMER | !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+Python code is running,
+but Kafka is not available.
+Kafka is not reachable.
+The program tried to connect to:
+    KAFKA_BOOTSTRAP_SERVERS = localhost:9092
+
+CHECK:
+1. Start Kafka first. Follow START_KAFKA.md.
+2. Verify Kafka is running. In a terminal, run:
+   cd ~/kafka
+   bin/kafka-topics.sh --list --bootstrap-server localhost:9092
+3. Verify the topic exists. Follow MANAGE_TOPIC.md.
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+2026-06-19 09:44:33 | DEBUG | C06-CONSUMER | KAFKA_BOOTSTRAP_SERVERS           = localhost:9092
+2026-06-19 09:44:33 | DEBUG | C06-CONSUMER | KAFKA_BROKER_ADDRESS_FAMILY       = v6
+2026-06-19 09:44:33 | DEBUG | C06-CONSUMER | KAFKA_TOPIC                       = mda-vessels-topic-ag
+2026-06-19 09:44:33 | DEBUG | C06-CONSUMER | KAFKA_CLEAR_TOPIC_ON_START        = true
+2026-06-19 09:44:33 | DEBUG | C06-CONSUMER | PRODUCER_MESSAGE_COUNT            = 3
+2026-06-19 09:44:33 | DEBUG | C06-CONSUMER | PRODUCER_MESSAGE_INTERVAL_SECONDS = 2
+2026-06-19 09:44:33 | DEBUG | C06-CONSUMER | PRODUCER_MAX_MESSAGES             = 50
+2026-06-19 09:44:33 | DEBUG | C06-CONSUMER | PRODUCER_POLL_INTERVAL_SECONDS    = 15
+2026-06-19 09:44:33 | DEBUG | C06-CONSUMER | KAFKA_GROUP_ID                    = streaming-consumer-group-A
+2026-06-19 09:44:33 | DEBUG | C06-CONSUMER | KAFKA_AUTO_OFFSET_RESET           = earliest
+2026-06-19 09:44:33 | DEBUG | C06-CONSUMER | CONSUMER_TIMEOUT_SECONDS          = 60
+2026-06-19 09:44:33 | DEBUG | C06-CONSUMER | CONSUMER_MAX_MESSAGES             = 1000
+2026-06-19 09:44:33 | DEBUG | C06-CONSUMER | AISSTREAM_API_KEY                 = ee7ff9340b731621f9d94097b7d23f6293607c06
+2026-06-19 09:44:33 | INFO | C06-CONSUMER | === RUN START ===
+2026-06-19 09:44:33 | INFO | C06-CONSUMER | project=C06-AIS-CONSUMER
+2026-06-19 09:44:33 | INFO | C06-CONSUMER | repo_dir=streaming-06-scenarios
+2026-06-19 09:44:33 | INFO | C06-CONSUMER | python=3.14.5
+2026-06-19 09:44:33 | INFO | C06-CONSUMER | os=Windows 11
+2026-06-19 09:44:33 | INFO | C06-CONSUMER | shell=powershell
+2026-06-19 09:44:33 | INFO | C06-CONSUMER | cwd=.
+2026-06-19 09:44:33 | INFO | C06-CONSUMER | github_actions=False
+2026-06-19 09:44:33 | INFO | C06-CONSUMER | ========================
+2026-06-19 09:44:33 | INFO | C06-CONSUMER | START AIS consumer main()
+2026-06-19 09:44:33 | INFO | C06-CONSUMER | ========================
+2026-06-19 09:44:33 | INFO | C06-CONSUMER | ROOT_DIR = .
+2026-06-19 09:44:33 | INFO | C06-CONSUMER | DATA_DIR = data
+2026-06-19 09:44:33 | INFO | C06-CONSUMER | OUTPUT_CSV = data\output\consumed_ais.csv
+2026-06-19 09:44:33 | INFO | C06-CONSUMER | OUTPUT_DB = data\output\ais.duckdb
+2026-06-19 09:44:33 | INFO | C06-CONSUMER | Loading settings from .env...
+2026-06-19 09:44:33 | INFO | C06-CONSUMER | KAFKA_BOOTSTRAP_SERVERS  = localhost:9092
+2026-06-19 09:44:33 | INFO | C06-CONSUMER | KAFKA_TOPIC              = mda-vessels-topic-ag
+2026-06-19 09:44:33 | INFO | C06-CONSUMER | KAFKA_GROUP_ID           = streaming-consumer-group-A
+2026-06-19 09:44:33 | INFO | C06-CONSUMER | CONSUMER_TIMEOUT_SECONDS = 60.0
+2026-06-19 09:44:33 | INFO | C06-CONSUMER | CONSUMER_MAX_MESSAGES    = 1000
+2026-06-19 09:44:33 | INFO | C06-CONSUMER | Verifying Kafka connection...
+2026-06-19 09:44:33 | INFO | C06-CONSUMER | Kafka port is reachable.
+2026-06-19 09:44:33 | INFO | C06-CONSUMER | Verifying Kafka topic...
+2026-06-19 09:44:41 | INFO | C06-CONSUMER | Topic 'mda-vessels-topic-ag' exists.
+2026-06-19 09:44:41 | INFO | C06-CONSUMER | Found 0 message(s) available in topic.
+2026-06-19 09:44:41 | INFO | C06-CONSUMER | Creating Kafka consumer...
+2026-06-19 09:44:41 | INFO | C06-CONSUMER | Subscribed to topic: 'mda-vessels-topic-ag' (reading from beginning)
+2026-06-19 09:44:41 | INFO | C06-CONSUMER | Initializing output...
+2026-06-19 09:44:41 | INFO | C06-CONSUMER | Output CSV cleared: consumed_ais.csv
+2026-06-19 09:44:41 | INFO | C06-STORAGE | Initialized tables consumed_valid_ais and consumed_rejected_ais in DuckDB.
+2026-06-19 09:44:41 | INFO | C06-STORAGE | Cleared storage tables.
+2026-06-19 09:44:41 | INFO | C06-CONSUMER | Database initialized: ais.duckdb
+2026-06-19 09:44:41 | INFO | C06-CONSUMER | Live chart initialized.
+2026-06-19 09:44:41 | INFO | C06-CONSUMER | Consuming messages...
+2026-06-19 09:44:41 | INFO | C06-CONSUMER | Waiting for up to 1000 message(s).
+2026-06-19 09:44:41 | INFO | C06-CONSUMER | Press CTRL+C to stop early.
+
+2026-06-19 09:45:26 | INFO | C06-CONSUMER | Kafka consumer closed.
+2026-06-19 09:45:45 | DEBUG | P06-PRODUCER | KAFKA_BOOTSTRAP_SERVERS           = localhost:9092
+2026-06-19 09:45:45 | DEBUG | P06-PRODUCER | KAFKA_BROKER_ADDRESS_FAMILY       = v6
+2026-06-19 09:45:45 | DEBUG | P06-PRODUCER | KAFKA_TOPIC                       = mda-vessels-topic-ag
+2026-06-19 09:45:45 | DEBUG | P06-PRODUCER | KAFKA_CLEAR_TOPIC_ON_START        = true
+2026-06-19 09:45:45 | DEBUG | P06-PRODUCER | PRODUCER_MESSAGE_COUNT            = 3
+2026-06-19 09:45:45 | DEBUG | P06-PRODUCER | PRODUCER_MESSAGE_INTERVAL_SECONDS = 2
+2026-06-19 09:45:45 | DEBUG | P06-PRODUCER | PRODUCER_MAX_MESSAGES             = 50
+2026-06-19 09:45:45 | DEBUG | P06-PRODUCER | PRODUCER_POLL_INTERVAL_SECONDS    = 15
+2026-06-19 09:45:45 | DEBUG | P06-PRODUCER | KAFKA_GROUP_ID                    = streaming-consumer-group-A
+2026-06-19 09:45:45 | DEBUG | P06-PRODUCER | KAFKA_AUTO_OFFSET_RESET           = earliest
+2026-06-19 09:45:45 | DEBUG | P06-PRODUCER | CONSUMER_TIMEOUT_SECONDS          = 60
+2026-06-19 09:45:45 | DEBUG | P06-PRODUCER | CONSUMER_MAX_MESSAGES             = 1000
+2026-06-19 09:45:45 | DEBUG | P06-PRODUCER | AISSTREAM_API_KEY                 = ee7ff9340b731621f9d94097b7d23f6293607c06
+2026-06-19 09:45:45 | INFO | P06-PRODUCER | === RUN START ===
+2026-06-19 09:45:45 | INFO | P06-PRODUCER | project=P06-AIS-PRODUCER
+2026-06-19 09:45:45 | INFO | P06-PRODUCER | repo_dir=streaming-06-scenarios
+2026-06-19 09:45:45 | INFO | P06-PRODUCER | python=3.14.5
+2026-06-19 09:45:46 | INFO | P06-PRODUCER | os=Windows 11
+2026-06-19 09:45:46 | INFO | P06-PRODUCER | shell=powershell
+2026-06-19 09:45:46 | INFO | P06-PRODUCER | cwd=.
+2026-06-19 09:45:46 | INFO | P06-PRODUCER | github_actions=False
+2026-06-19 09:45:46 | INFO | P06-PRODUCER | =================================
+2026-06-19 09:45:46 | INFO | P06-PRODUCER | START AISStream Kafka Producer
+2026-06-19 09:45:46 | INFO | P06-PRODUCER | =================================
+2026-06-19 09:45:46 | INFO | P06-PRODUCER | ROOT_DIR = .
+2026-06-19 09:45:46 | INFO | P06-PRODUCER | Loading settings from .env...
+2026-06-19 09:45:46 | INFO | P06-PRODUCER | KAFKA_BOOTSTRAP_SERVERS    = localhost:9092
+2026-06-19 09:45:46 | INFO | P06-PRODUCER | KAFKA_TOPIC                = mda-vessels-topic-ag
+2026-06-19 09:45:46 | INFO | P06-PRODUCER | AISSTREAM_API_KEY Presence = Present (len=40)
+2026-06-19 09:45:46 | INFO | P06-PRODUCER | Verifying Kafka connection...
+2026-06-19 09:45:46 | INFO | P06-PRODUCER | Kafka port is reachable.
+2026-06-19 09:45:53 | INFO | P06-PRODUCER | Connecting to AISStream WebSocket at wss://stream.aisstream.io/v0/stream...
+2026-06-19 09:45:53 | INFO | P06-PRODUCER | Monitoring Bounding Box: [[[0.0, 100.0], [45.0, 140.0]]]
+2026-06-19 09:45:56 | INFO | P06-PRODUCER | WebSocket connection established. Sending subscription payload...
+2026-06-19 09:45:56 | INFO | P06-PRODUCER | Subscription sent successfully. Listening for live AIS messages...
+2026-06-19 09:45:57 | INFO | P06-PRODUCER | Forwarded 1 Chinese vessel telemetry messages. Latest: MMSI=4125706 Name='' type=BaseStationReport
+2026-06-19 09:46:08 | DEBUG | C06-CONSUMER | KAFKA_BOOTSTRAP_SERVERS           = localhost:9092
+2026-06-19 09:46:08 | DEBUG | C06-CONSUMER | KAFKA_BROKER_ADDRESS_FAMILY       = v6
+2026-06-19 09:46:08 | DEBUG | C06-CONSUMER | KAFKA_TOPIC                       = mda-vessels-topic-ag
+2026-06-19 09:46:08 | DEBUG | C06-CONSUMER | KAFKA_CLEAR_TOPIC_ON_START        = true
+2026-06-19 09:46:08 | DEBUG | C06-CONSUMER | PRODUCER_MESSAGE_COUNT            = 3
+2026-06-19 09:46:08 | DEBUG | C06-CONSUMER | PRODUCER_MESSAGE_INTERVAL_SECONDS = 2
+2026-06-19 09:46:08 | DEBUG | C06-CONSUMER | PRODUCER_MAX_MESSAGES             = 50
+2026-06-19 09:46:08 | DEBUG | C06-CONSUMER | PRODUCER_POLL_INTERVAL_SECONDS    = 15
+2026-06-19 09:46:08 | DEBUG | C06-CONSUMER | KAFKA_GROUP_ID                    = streaming-consumer-group-A
+2026-06-19 09:46:08 | DEBUG | C06-CONSUMER | KAFKA_AUTO_OFFSET_RESET           = earliest
+2026-06-19 09:46:08 | DEBUG | C06-CONSUMER | CONSUMER_TIMEOUT_SECONDS          = 60
+2026-06-19 09:46:08 | DEBUG | C06-CONSUMER | CONSUMER_MAX_MESSAGES             = 1000
+2026-06-19 09:46:08 | DEBUG | C06-CONSUMER | AISSTREAM_API_KEY                 = ee7ff9340b731621f9d94097b7d23f6293607c06
+2026-06-19 09:46:08 | INFO | C06-CONSUMER | === RUN START ===
+2026-06-19 09:46:08 | INFO | C06-CONSUMER | project=C06-AIS-CONSUMER
+2026-06-19 09:46:08 | INFO | C06-CONSUMER | repo_dir=streaming-06-scenarios
+2026-06-19 09:46:08 | INFO | C06-CONSUMER | python=3.14.5
+2026-06-19 09:46:08 | INFO | C06-CONSUMER | os=Windows 11
+2026-06-19 09:46:08 | INFO | C06-CONSUMER | shell=powershell
+2026-06-19 09:46:08 | INFO | C06-CONSUMER | cwd=.
+2026-06-19 09:46:08 | INFO | C06-CONSUMER | github_actions=False
+2026-06-19 09:46:08 | INFO | C06-CONSUMER | ========================
+2026-06-19 09:46:08 | INFO | C06-CONSUMER | START AIS consumer main()
+2026-06-19 09:46:08 | INFO | C06-CONSUMER | ========================
+2026-06-19 09:46:08 | INFO | C06-CONSUMER | ROOT_DIR = .
+2026-06-19 09:46:08 | INFO | C06-CONSUMER | DATA_DIR = data
+2026-06-19 09:46:08 | INFO | C06-CONSUMER | OUTPUT_CSV = data\output\consumed_ais.csv
+2026-06-19 09:46:08 | INFO | C06-CONSUMER | OUTPUT_DB = data\output\ais.duckdb
+2026-06-19 09:46:08 | INFO | C06-CONSUMER | Loading settings from .env...
+2026-06-19 09:46:08 | INFO | C06-CONSUMER | KAFKA_BOOTSTRAP_SERVERS  = localhost:9092
+2026-06-19 09:46:08 | INFO | C06-CONSUMER | KAFKA_TOPIC              = mda-vessels-topic-ag
+2026-06-19 09:46:08 | INFO | C06-CONSUMER | KAFKA_GROUP_ID           = streaming-consumer-group-A
+2026-06-19 09:46:08 | INFO | C06-CONSUMER | CONSUMER_TIMEOUT_SECONDS = 60.0
+2026-06-19 09:46:08 | INFO | C06-CONSUMER | CONSUMER_MAX_MESSAGES    = 1000
+2026-06-19 09:46:08 | INFO | C06-CONSUMER | Verifying Kafka connection...
+2026-06-19 09:46:08 | INFO | C06-CONSUMER | Kafka port is reachable.
+2026-06-19 09:46:08 | INFO | C06-CONSUMER | Verifying Kafka topic...
+2026-06-19 09:46:10 | INFO | C06-CONSUMER | Topic 'mda-vessels-topic-ag' exists.
+2026-06-19 09:46:10 | INFO | C06-CONSUMER | Found 2 message(s) available in topic.
+2026-06-19 09:46:10 | INFO | C06-CONSUMER | Creating Kafka consumer...
+2026-06-19 09:46:10 | INFO | C06-CONSUMER | Subscribed to topic: 'mda-vessels-topic-ag' (reading from beginning)
+2026-06-19 09:46:10 | INFO | C06-CONSUMER | Initializing output...
+2026-06-19 09:46:10 | INFO | C06-CONSUMER | Output CSV cleared: consumed_ais.csv
+2026-06-19 09:46:11 | INFO | C06-STORAGE | Initialized tables consumed_valid_ais and consumed_rejected_ais in DuckDB.
+2026-06-19 09:46:11 | INFO | C06-STORAGE | Cleared storage tables.
+2026-06-19 09:46:11 | INFO | C06-CONSUMER | Database initialized: ais.duckdb
+2026-06-19 09:46:11 | INFO | C06-CONSUMER | Live chart initialized.
+2026-06-19 09:46:11 | INFO | C06-CONSUMER | Consuming messages...
+2026-06-19 09:46:11 | INFO | C06-CONSUMER | Waiting for up to 1000 message(s).
+2026-06-19 09:46:11 | INFO | C06-CONSUMER | Press CTRL+C to stop early.
+
+2026-06-19 09:46:14 | WARNING | C06-CONSUMER | Validation failed for vessel MMSI 4125706
+2026-06-19 09:46:14 | WARNING | C06-CONSUMER | Errors: ['Required field is blank: ship_name']
+2026-06-19 09:46:16 | INFO | C06-CONSUMER | Forwarded & Logged: MMSI=413577330 Name='SHUN TAI18' Risk=LOW SOG=None knots
+2026-06-19 09:46:16 | INFO | C06-CONSUMER | Forwarded & Logged: MMSI=412472910 Name='FULI288' Risk=LOW SOG=0 knots
+2026-06-19 09:46:16 | INFO | C06-CONSUMER | Forwarded & Logged: MMSI=413907062 Name='SUIDEYANG198' Risk=LOW SOG=0 knots
+2026-06-19 09:46:19 | INFO | C06-CONSUMER | Forwarded & Logged: MMSI=413595490 Name='YUAN JING HE' Risk=LOW SOG=13.3 knots
+2026-06-19 09:46:20 | INFO | C06-CONSUMER | Forwarded & Logged: MMSI=414682000 Name='LIANG XIANG 82' Risk=LOW SOG=8.5 knots
+2026-06-19 09:46:20 | INFO | C06-CONSUMER | Forwarded & Logged: MMSI=413521330 Name='DONG HE LUN' Risk=LOW SOG=0.2 knots
+2026-06-19 09:46:22 | WARNING | C06-CONSUMER | Validation failed for vessel MMSI 4125706
+2026-06-19 09:46:22 | WARNING | C06-CONSUMER | Errors: ['Required field is blank: ship_name']
+2026-06-19 09:46:33 | INFO | C06-CONSUMER | Forwarded & Logged: MMSI=413311110 Name='DING HENG 19' Risk=LOW SOG=0.1 knots
+2026-06-19 09:46:39 | INFO | P06-PRODUCER | Forwarded 10 Chinese vessel telemetry messages. Latest: MMSI=413906548 Name='ZHUHANG28' type=StaticDataReport
+2026-06-19 09:46:39 | INFO | C06-CONSUMER | Forwarded & Logged: MMSI=413906548 Name='ZHUHANG28' Risk=LOW SOG=None knots
+2026-06-19 09:46:48 | INFO | C06-CONSUMER | Forwarded & Logged: MMSI=413862375 Name='BAOFENG2' Risk=LOW SOG=None knots
+2026-06-19 09:46:51 | INFO | C06-CONSUMER | Forwarded & Logged: MMSI=413800827 Name='QIJI636' Risk=LOW SOG=0 knots
+2026-06-19 09:46:57 | WARNING | C06-CONSUMER | Validation failed for vessel MMSI 4125706
+2026-06-19 09:46:57 | WARNING | C06-CONSUMER | Errors: ['Required field is blank: ship_name']
+2026-06-19 09:47:01 | INFO | C06-CONSUMER | Forwarded & Logged: MMSI=413900364 Name='BOSHIHANG8' Risk=LOW SOG=None knots
+2026-06-19 09:47:02 | INFO | C06-CONSUMER | Forwarded & Logged: MMSI=413906647 Name='FENGNIAN 96' Risk=LOW SOG=None knots
+2026-06-19 09:47:07 | WARNING | C06-CONSUMER | Validation failed for vessel MMSI 4125706
+2026-06-19 09:47:07 | WARNING | C06-CONSUMER | Errors: ['Required field is blank: ship_name']
+2026-06-19 09:47:11 | INFO | C06-CONSUMER | Forwarded & Logged: MMSI=414351850 Name='YANGWANG1' Risk=LOW SOG=None knots
+2026-06-19 09:47:11 | INFO | C06-CONSUMER | Forwarded & Logged: MMSI=413862375 Name='BAOFENG2' Risk=LOW SOG=0 knots
+2026-06-19 09:47:12 | INFO | C06-CONSUMER | Forwarded & Logged: MMSI=414351850 Name='YANGWANG1' Risk=LOW SOG=0 knots
+2026-06-19 09:47:13 | INFO | P06-PRODUCER | Forwarded 20 Chinese vessel telemetry messages. Latest: MMSI=412472910 Name='FULI288' type=PositionReport
+2026-06-19 09:47:13 | INFO | C06-CONSUMER | Forwarded & Logged: MMSI=412472910 Name='FULI288' Risk=LOW SOG=0 knots
+2026-06-19 09:47:17 | INFO | C06-CONSUMER | Forwarded & Logged: MMSI=413800827 Name='QIJI636' Risk=LOW SOG=0 knots
+2026-06-19 09:47:43 | INFO | C06-CONSUMER | Forwarded & Logged: MMSI=413346110 Name='RENJIANZHUHAI' Risk=LOW SOG=8.5 knots
+2026-06-19 09:47:50 | INFO | C06-CONSUMER | Forwarded & Logged: MMSI=413391750 Name='NANFANGHAIGONG' Risk=LOW SOG=0 knots
+2026-06-19 09:47:56 | INFO | C06-CONSUMER | Forwarded & Logged: MMSI=413273890 Name='GUANG XING 398' Risk=LOW SOG=1.7 knots
+2026-06-19 09:47:59 | INFO | C06-CONSUMER | Forwarded & Logged: MMSI=414265000 Name='JINNING7' Risk=LOW SOG=15.2 knots
+2026-06-19 09:47:59 | INFO | C06-CONSUMER | Forwarded & Logged: MMSI=413287970 Name='NING YANG YOU 9' Risk=LOW SOG=10.8 knots
+2026-06-19 09:48:00 | INFO | C06-CONSUMER | Forwarded & Logged: MMSI=413850324 Name='FULI368' Risk=LOW SOG=0 knots
+2026-06-19 09:48:00 | INFO | C06-CONSUMER | Forwarded & Logged: MMSI=413310890 Name='NANHANG717' Risk=LOW SOG=0 knots
+2026-06-19 09:48:05 | WARNING | C06-CONSUMER | Validation failed for vessel MMSI 413876935
+2026-06-19 09:48:05 | WARNING | C06-CONSUMER | Errors: ['Required field is blank: ship_name']
+2026-06-19 09:48:06 | INFO | P06-PRODUCER | Forwarded 30 Chinese vessel telemetry messages. Latest: MMSI=413906548 Name='ZHUHANG28' type=PositionReport
+2026-06-19 09:48:06 | INFO | C06-CONSUMER | Forwarded & Logged: MMSI=413906548 Name='ZHUHANG28' Risk=LOW SOG=0 knots
+2026-06-19 09:48:06 | WARNING | C06-CONSUMER | Validation failed for vessel MMSI 4125706
+2026-06-19 09:48:06 | WARNING | C06-CONSUMER | Errors: ['Required field is blank: ship_name']
+2026-06-19 09:48:16 | INFO | C06-CONSUMER | Forwarded & Logged: MMSI=413906548 Name='ZHUHANG28' Risk=LOW SOG=None knots
+2026-06-19 09:48:19 | INFO | C06-CONSUMER | Forwarded & Logged: MMSI=413054000 Name='XIN QING DAO' Risk=LOW SOG=None knots
+2026-06-19 09:48:20 | INFO | C06-CONSUMER | Forwarded & Logged: MMSI=413060000 Name='XIN PU DONG' Risk=LOW SOG=17 knots
+2026-06-19 09:48:24 | INFO | C06-CONSUMER | Forwarded & Logged: MMSI=413494920 Name='YIN ZHU HU' Risk=LOW SOG=None knots
+2026-06-19 09:48:32 | WARNING | C06-CONSUMER | Validation failed for vessel MMSI 412916802
+2026-06-19 09:48:32 | WARNING | C06-CONSUMER | Errors: ['Required field is blank: ship_name']
+2026-06-19 09:48:33 | INFO | C06-CONSUMER | Forwarded & Logged: MMSI=412529197 Name='ZHUDAN5351' Risk=LOW SOG=0.1 knots
+2026-06-19 09:48:38 | WARNING | C06-CONSUMER | Validation failed for vessel MMSI 413905281
+2026-06-19 09:48:38 | WARNING | C06-CONSUMER | Errors: ['Required field is blank: ship_name']
+2026-06-19 09:48:38 | INFO | C06-CONSUMER | Forwarded & Logged: MMSI=413595490 Name='YUAN JING HE' Risk=LOW SOG=13.4 knots
+2026-06-19 09:48:43 | INFO | P06-PRODUCER | Forwarded 40 Chinese vessel telemetry messages. Latest: MMSI=413276420 Name='NANGANG99' type=PositionReport
+2026-06-19 09:48:44 | INFO | C06-CONSUMER | Forwarded & Logged: MMSI=413276420 Name='NANGANG99' Risk=LOW SOG=1.2 knots
+2026-06-19 09:48:44 | WARNING | C06-CONSUMER | Validation failed for vessel MMSI 413904132
+2026-06-19 09:48:44 | WARNING | C06-CONSUMER | Errors: ['Required field is blank: ship_name']
+2026-06-19 09:48:50 | INFO | C06-CONSUMER | Forwarded & Logged: MMSI=413856105 Name='FENG NIAN 99' Risk=LOW SOG=0 knots
+2026-06-19 09:48:50 | INFO | C06-CONSUMER | Forwarded & Logged: MMSI=413465130 Name='HUIWAN306' Risk=LOW SOG=0 knots
+2026-06-19 09:48:59 | INFO | C06-CONSUMER | Forwarded & Logged: MMSI=414265000 Name='JINNING7' Risk=LOW SOG=15.2 knots
+2026-06-19 09:49:05 | INFO | C06-CONSUMER | Forwarded & Logged: MMSI=413496590 Name='ZHONG SHAN 6' Risk=LOW SOG=0.1 knots
+2026-06-19 09:49:05 | INFO | C06-CONSUMER | Forwarded & Logged: MMSI=413865532 Name='RONGHANG23' Risk=LOW SOG=0 knots
+2026-06-19 09:49:09 | INFO | C06-CONSUMER | Forwarded & Logged: MMSI=413865532 Name='RONGHANG23' Risk=LOW SOG=0 knots
+2026-06-19 09:49:13 | INFO | C06-CONSUMER | Forwarded & Logged: MMSI=412472910 Name='FULI288' Risk=LOW SOG=0.1 knots
+2026-06-19 09:49:15 | WARNING | C06-CONSUMER | Validation failed for vessel MMSI 413337000
+2026-06-19 09:49:15 | WARNING | C06-CONSUMER | Errors: ['Required field is blank: ship_name']
+2026-06-19 09:49:28 | INFO | P06-PRODUCER | Forwarded 50 Chinese vessel telemetry messages. Latest: MMSI=413906647 Name='FENGNIAN 96' type=PositionReport
+2026-06-19 09:49:28 | INFO | C06-CONSUMER | Forwarded & Logged: MMSI=413906647 Name='FENGNIAN 96' Risk=LOW SOG=0 knots
+2026-06-19 09:49:31 | WARNING | C06-CONSUMER | Validation failed for vessel MMSI 412536244
+2026-06-19 09:49:31 | WARNING | C06-CONSUMER | Errors: ['Required field is blank: ship_name']
+2026-06-19 09:49:37 | WARNING | C06-CONSUMER | Validation failed for vessel MMSI 4125706
+2026-06-19 09:49:37 | WARNING | C06-CONSUMER | Errors: ['Required field is blank: ship_name']
+2026-06-19 09:49:38 | INFO | C06-CONSUMER | Forwarded & Logged: MMSI=413595490 Name='YUAN JING HE' Risk=LOW SOG=13.4 knots
+2026-06-19 09:49:39 | INFO | C06-CONSUMER | Forwarded & Logged: MMSI=413762753 Name='HUA HAI 07' Risk=LOW SOG=0 knots
+2026-06-19 09:49:40 | INFO | C06-CONSUMER | Forwarded & Logged: MMSI=413287970 Name='NING YANG YOU 9' Risk=LOW SOG=10.7 knots
+2026-06-19 09:49:43 | INFO | C06-CONSUMER | Forwarded & Logged: MMSI=413276420 Name='NANGANG99' Risk=LOW SOG=1.7 knots
+2026-06-19 09:49:49 | INFO | C06-CONSUMER | Forwarded & Logged: MMSI=413060000 Name='XIN PU DONG' Risk=LOW SOG=17.1 knots
+2026-06-19 09:49:49 | WARNING | C06-CONSUMER | Validation failed for vessel MMSI 413495760
+2026-06-19 09:49:49 | WARNING | C06-CONSUMER | Errors: ['Required field is blank: ship_name']
+2026-06-19 09:49:50 | INFO | C06-CONSUMER | Forwarded & Logged: MMSI=413871165 Name='YUEJIANG68' Risk=LOW SOG=None knots
+2026-06-19 09:49:58 | INFO | P06-PRODUCER | Forwarded 60 Chinese vessel telemetry messages. Latest: MMSI=414265000 Name='JINNING7' type=PositionReport
+2026-06-19 09:49:59 | INFO | C06-CONSUMER | Forwarded & Logged: MMSI=414265000 Name='JINNING7' Risk=LOW SOG=15.2 knots
+2026-06-19 09:50:08 | INFO | C06-CONSUMER | Forwarded & Logged: MMSI=413695760 Name='DONG FANG QIANG' Risk=LOW SOG=0 knots
+2026-06-19 09:50:16 | WARNING | C06-CONSUMER | Validation failed for vessel MMSI 413906927
+2026-06-19 09:50:16 | WARNING | C06-CONSUMER | Errors: ['Required field is blank: ship_name']
+2026-06-19 09:50:33 | INFO | C06-CONSUMER | Forwarded & Logged: MMSI=413995708 Name='ZHIHANG188' Risk=LOW SOG=0 knots
+2026-06-19 09:50:34 | INFO | C06-CONSUMER | Forwarded & Logged: MMSI=413543480 Name='AN YANG 118' Risk=LOW SOG=0 knots
+2026-06-19 09:50:39 | INFO | C06-CONSUMER | Forwarded & Logged: MMSI=413595490 Name='YUAN JING HE' Risk=LOW SOG=13.3 knots
+2026-06-19 09:50:40 | INFO | C06-CONSUMER | Forwarded & Logged: MMSI=413906647 Name='FENGNIAN 96' Risk=LOW SOG=0 knots
+2026-06-19 09:50:49 | WARNING | C06-CONSUMER | Validation failed for vessel MMSI 413495760
+2026-06-19 09:50:49 | WARNING | C06-CONSUMER | Errors: ['Required field is blank: ship_name']
+2026-06-19 09:50:52 | INFO | C06-CONSUMER | Forwarded & Logged: MMSI=412400040 Name='SHENG PING189' Risk=LOW SOG=0 knots
+2026-06-19 09:50:55 | INFO | C06-CONSUMER | Forwarded & Logged: MMSI=413295960 Name='QING YUN HE' Risk=LOW SOG=0 knots
+2026-06-19 09:50:59 | INFO | P06-PRODUCER | Forwarded 70 Chinese vessel telemetry messages. Latest: MMSI=414265000 Name='JINNING7' type=PositionReport
+2026-06-19 09:50:59 | INFO | C06-CONSUMER | Forwarded & Logged: MMSI=414265000 Name='JINNING7' Risk=LOW SOG=15.3 knots
+2026-06-19 09:51:07 | INFO | C06-CONSUMER | Forwarded & Logged: MMSI=413494920 Name='YIN ZHU HU' Risk=LOW SOG=0 knots
+2026-06-19 09:51:10 | INFO | C06-CONSUMER | Forwarded & Logged: MMSI=413577330 Name='SHUN TAI18' Risk=LOW SOG=0 knots
+2026-06-19 09:51:19 | INFO | C06-CONSUMER | Forwarded & Logged: MMSI=413906647 Name='FENGNIAN 96' Risk=LOW SOG=None knots
+2026-06-19 09:51:26 | INFO | C06-CONSUMER | Forwarded & Logged: MMSI=413060000 Name='XIN PU DONG' Risk=LOW SOG=17 knots
+2026-06-19 09:51:27 | INFO | C06-CONSUMER | Forwarded & Logged: MMSI=413479290 Name='HENG  YU  93' Risk=LOW SOG=0 knots
+2026-06-19 09:51:28 | INFO | C06-CONSUMER | Forwarded & Logged: MMSI=413850324 Name='FULI368' Risk=LOW SOG=None knots
+2026-06-19 09:51:32 | INFO | C06-CONSUMER | Forwarded & Logged: MMSI=412529197 Name='ZHUDAN5351' Risk=LOW SOG=0.2 knots
+2026-06-19 09:51:33 | INFO | C06-CONSUMER | Forwarded & Logged: MMSI=413346110 Name='RENJIANZHUHAI' Risk=LOW SOG=8.5 knots
+2026-06-19 09:51:48 | INFO | C06-CONSUMER | Forwarded & Logged: MMSI=413465130 Name='HUIWAN306' Risk=LOW SOG=0 knots
+2026-06-19 09:51:50 | INFO | P06-PRODUCER | Forwarded 80 Chinese vessel telemetry messages. Latest: MMSI=413310890 Name='NANHANG717' type=PositionReport
+2026-06-19 09:51:50 | INFO | C06-CONSUMER | Forwarded & Logged: MMSI=413310890 Name='NANHANG717' Risk=LOW SOG=0 knots
+2026-06-19 09:52:01 | INFO | C06-CONSUMER | Forwarded & Logged: MMSI=413900364 Name='BOSHIHANG8' Risk=LOW SOG=0 knots
+2026-06-19 09:52:10 | INFO | C06-CONSUMER | Forwarded & Logged: MMSI=414265000 Name='JINNING7' Risk=LOW SOG=15.3 knots
+2026-06-19 09:52:20 | INFO | C06-CONSUMER | Forwarded & Logged: MMSI=413906648 Name='FENGNIAN 95' Risk=LOW SOG=None knots
+2026-06-19 09:52:21 | INFO | C06-CONSUMER | Forwarded & Logged: MMSI=413876935 Name='FENG NIAN 98' Risk=LOW SOG=0 knots
+2026-06-19 09:52:24 | INFO | C06-CONSUMER | Forwarded & Logged: MMSI=413905921 Name='YUEGUANGZHOUHUO 2833' Risk=LOW SOG=0.1 knots
+2026-06-19 09:52:26 | INFO | C06-CONSUMER | Forwarded & Logged: MMSI=413060000 Name='XIN PU DONG' Risk=LOW SOG=17 knots
+2026-06-19 09:52:31 | INFO | C06-CONSUMER | Forwarded & Logged: MMSI=413391750 Name='NANFANGHAIGONG' Risk=LOW SOG=0 knots
+2026-06-19 09:52:32 | INFO | C06-CONSUMER | Forwarded & Logged: MMSI=413311110 Name='DING HENG 19' Risk=LOW SOG=0.1 knots
+2026-06-19 09:52:44 | INFO | C06-CONSUMER | Forwarded & Logged: MMSI=413906548 Name='ZHUHANG28' Risk=LOW SOG=0 knots
+2026-06-19 09:52:48 | INFO | P06-PRODUCER | Forwarded 90 Chinese vessel telemetry messages. Latest: MMSI=413762504 Name='MINGYANG178' type=StandardClassBPositionReport
+2026-06-19 09:52:48 | INFO | C06-CONSUMER | Forwarded & Logged: MMSI=413762504 Name='MINGYANG178' Risk=LOW SOG=0 knots
+2026-06-19 09:52:51 | INFO | C06-CONSUMER | Forwarded & Logged: MMSI=413907135 Name='YUEYOULIAN905' Risk=LOW SOG=None knots
+2026-06-19 09:52:53 | INFO | C06-CONSUMER | Forwarded & Logged: MMSI=413900364 Name='BOSHIHANG8' Risk=LOW SOG=0 knots
+2026-06-19 09:52:57 | WARNING | C06-CONSUMER | Validation failed for vessel MMSI 4125706
+2026-06-19 09:52:57 | WARNING | C06-CONSUMER | Errors: ['Required field is blank: ship_name']
+2026-06-19 09:53:04 | INFO | C06-CONSUMER | Forwarded & Logged: MMSI=413873523 Name='FULI901' Risk=LOW SOG=0 knots
+2026-06-19 09:53:07 | WARNING | C06-CONSUMER | Validation failed for vessel MMSI 4125706
+2026-06-19 09:53:07 | WARNING | C06-CONSUMER | Errors: ['Required field is blank: ship_name']
+2026-06-19 09:53:11 | INFO | C06-CONSUMER | Forwarded & Logged: MMSI=413800827 Name='QIJI636' Risk=LOW SOG=None knots
+2026-06-19 09:53:26 | INFO | C06-CONSUMER | Forwarded & Logged: MMSI=413301850 Name='CHANG WANG LONG' Risk=LOW SOG=None knots
+2026-06-19 09:53:26 | INFO | C06-CONSUMER | Forwarded & Logged: MMSI=413762732 Name='ZHUCHUAN 1005' Risk=LOW SOG=0 knots
+2026-06-19 09:53:40 | INFO | C06-CONSUMER | Forwarded & Logged: MMSI=413906647 Name='FENGNIAN 96' Risk=LOW SOG=0 knots
+2026-06-19 09:53:43 | INFO | P06-PRODUCER | Forwarded 100 Chinese vessel telemetry messages. Latest: MMSI=413543480 Name='AN YANG 118' type=PositionReport
+2026-06-19 09:53:43 | INFO | C06-CONSUMER | Forwarded & Logged: MMSI=413543480 Name='AN YANG 118' Risk=LOW SOG=0 knots
+2026-06-19 09:53:51 | INFO | C06-CONSUMER | Forwarded & Logged: MMSI=413906659 Name='YUEGUANGZHOUHUO2933' Risk=LOW SOG=0 knots
+2026-06-19 09:53:56 | WARNING | C06-CONSUMER | Validation failed for vessel MMSI 413902744
+2026-06-19 09:53:56 | WARNING | C06-CONSUMER | Errors: ['Required field is blank: ship_name']
+2026-06-19 09:54:07 | WARNING | C06-CONSUMER | Validation failed for vessel MMSI 4125706
+2026-06-19 09:54:07 | WARNING | C06-CONSUMER | Errors: ['Required field is blank: ship_name']
+2026-06-19 09:54:16 | INFO | C06-CONSUMER | Forwarded & Logged: MMSI=413906548 Name='ZHUHANG28' Risk=LOW SOG=None knots
+2026-06-19 09:54:19 | INFO | C06-CONSUMER | Forwarded & Logged: MMSI=413054000 Name='XIN QING DAO' Risk=LOW SOG=None knots
+2026-06-19 09:54:22 | INFO | C06-CONSUMER | Forwarded & Logged: MMSI=413777116 Name='RONGHANG388' Risk=LOW SOG=0 knots
+2026-06-19 09:54:22 | WARNING | C06-CONSUMER | Validation failed for vessel MMSI 4125706
+2026-06-19 09:54:22 | WARNING | C06-CONSUMER | Errors: ['Required field is blank: ship_name']
+2026-06-19 09:54:22 | INFO | C06-CONSUMER | Forwarded & Logged: MMSI=412472910 Name='FULI288' Risk=LOW SOG=0 knots
+2026-06-19 09:54:23 | INFO | P06-PRODUCER | Forwarded 110 Chinese vessel telemetry messages. Latest: MMSI=413054000 Name='XIN QING DAO' type=PositionReport
+2026-06-19 09:54:23 | INFO | C06-CONSUMER | Forwarded & Logged: MMSI=413494920 Name='YIN ZHU HU' Risk=LOW SOG=None knots
+2026-06-19 09:54:23 | INFO | C06-CONSUMER | Forwarded & Logged: MMSI=413054000 Name='XIN QING DAO' Risk=LOW SOG=5.9 knots
+2026-06-19 09:54:26 | INFO | C06-CONSUMER | Forwarded & Logged: MMSI=412329150 Name='NAN GANG 82' Risk=LOW SOG=None knots
+2026-06-19 09:54:31 | INFO | C06-CONSUMER | Forwarded & Logged: MMSI=413314440 Name='XIN MING ZHOU 92' Risk=LOW SOG=0 knots
+2026-06-19 09:54:34 | INFO | C06-CONSUMER | Forwarded & Logged: MMSI=413907135 Name='YUEYOULIAN905' Risk=LOW SOG=0 knots
+2026-06-19 09:54:34 | INFO | C06-CONSUMER | Forwarded & Logged: MMSI=414265000 Name='JINNING7' Risk=LOW SOG=15.3 knots
+2026-06-19 09:54:35 | INFO | C06-CONSUMER | Forwarded & Logged: MMSI=413472650 Name='SHENG HANG TIAO ZHAN' Risk=LOW SOG=None knots
+2026-06-19 09:54:37 | WARNING | C06-CONSUMER | Validation failed for vessel MMSI 4125706
+2026-06-19 09:54:37 | WARNING | C06-CONSUMER | Errors: ['Required field is blank: ship_name']
+2026-06-19 09:54:39 | WARNING | C06-CONSUMER | Validation failed for vessel MMSI 413495760
+2026-06-19 09:54:39 | WARNING | C06-CONSUMER | Errors: ['Required field is blank: ship_name']
+2026-06-19 09:54:47 | WARNING | C06-CONSUMER | Validation failed for vessel MMSI 412916802
+2026-06-19 09:54:47 | WARNING | C06-CONSUMER | Errors: ['Required field is blank: ship_name']
+2026-06-19 09:54:48 | INFO | C06-CONSUMER | Forwarded & Logged: MMSI=413465130 Name='HUIWAN306' Risk=LOW SOG=0 knots
+2026-06-19 09:54:51 | INFO | P06-PRODUCER | Forwarded 120 Chinese vessel telemetry messages. Latest: MMSI=413391750 Name='NANFANGHAIGONG' type=PositionReport
+2026-06-19 09:54:51 | INFO | C06-CONSUMER | Forwarded & Logged: MMSI=413391750 Name='NANFANGHAIGONG' Risk=LOW SOG=0 knots
+2026-06-19 09:54:57 | WARNING | C06-CONSUMER | Validation failed for vessel MMSI 4125706
+2026-06-19 09:54:57 | WARNING | C06-CONSUMER | Errors: ['Required field is blank: ship_name']
+2026-06-19 09:55:03 | INFO | P06-PRODUCER | Producer stopped by user (CTRL+C).
+2026-06-19 09:55:03 | INFO | P06-PRODUCER | Flushing Kafka producer messages...
+2026-06-19 09:55:03 | INFO | P06-PRODUCER | Producer shutdown complete.
+2026-06-19 09:55:58 | INFO | C06-CONSUMER | No message received within 60.0s timeout.
+2026-06-19 09:55:58 | INFO | C06-CONSUMER | Producer finished or paused. Stopping consumer.
+2026-06-19 09:55:58 | INFO | C06-CONSUMER | Kafka consumer closed.
+2026-06-19 09:55:58 | INFO | C06-CONSUMER | Saving artifacts...
+2026-06-19 09:55:58 | INFO | C06-CONSUMER | WROTE OUTPUT_CSV = data\output\consumed_ais.csv
+2026-06-19 09:55:58 | INFO | C06-CONSUMER | WROTE OUTPUT_DB = data\output\ais.duckdb
+2026-06-19 09:55:58 | INFO | C06-CONSUMER | Summary:
+2026-06-19 09:55:58 | INFO | C06-CONSUMER | Consumed 97 message(s) from topic 'mda-vessels-topic-ag'.
+2026-06-19 09:55:58 | INFO | C06-CONSUMER | Skipped  24 message(s) due to validation errors.
+2026-06-19 09:55:58 | INFO | C06-CONSUMER |   Total messages processed: 97
+2026-06-19 09:55:58 | INFO | C06-CONSUMER |   Average operational speed: 2.80 knots
+2026-06-19 09:55:59 | INFO | C06-CONSUMER |   Maximum speed tracked:    17.10 knots
+2026-06-19 09:55:59 | INFO | C06-STORAGE | DuckDB Valid AIS Telemetry Rows: 97
+2026-06-19 09:55:59 | INFO | C06-STORAGE | DuckDB Rejected Telemetry Rows: 24
+2026-06-19 09:55:59 | INFO | C06-STORAGE | DuckDB Count by Risk Level:
+2026-06-19 09:55:59 | INFO | C06-STORAGE |   LOW: 97
+2026-06-19 09:55:59 | INFO | C06-STORAGE | DuckDB Count by Vessel Category:
+2026-06-19 09:55:59 | INFO | C06-STORAGE |   Government / Military (Other): 97
+2026-06-19 09:55:59 | INFO | C06-CONSUMER | ========================
+2026-06-19 09:55:59 | INFO | C06-CONSUMER | AIS Consumer executed successfully!
+2026-06-19 09:55:59 | INFO | C06-CONSUMER | ========================
