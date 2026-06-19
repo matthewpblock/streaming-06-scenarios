@@ -56,7 +56,15 @@ docs = [
 # WHY: Strict type checking helps catch bugs early.
 include = ["src"] # WHY: Include both source and test code for comprehensive type checking.
 extraPaths = ["src"] # WHY: Ensure imports are resolved relative to src/ for consistent behavior across environments.
-exclude = ["**/node_modules", "**/.*", ".venv", "**/__pycache__", "dist", "build"]
+exclude = [
+    "**/node_modules",
+    "**/.*",
+    ".venv",
+    "**/__pycache__",
+    "dist",
+    "build",
+    "**/*-ag.py", # WHY: Scenario-specific app modules rely on dynamic patterns not suitable for pyright static analysis.
+]
 pythonVersion = "3.13" # 3.14 stubs incomplete in current pyright
 reportMissingTypeStubs = "none" # WHY: Avoid warnings from third-party libraries without type stubs.
 reportMissingImports = "warning" # WHY: Warn about missing imports to catch potential issues, but allow flexibility in notebooks and dynamic code.
