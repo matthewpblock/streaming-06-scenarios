@@ -110,16 +110,25 @@ def load_data() -> pd.DataFrame:
     if not DB_PATH.exists():
         return pd.DataFrame()
 
-    try:
-        # Connect to DuckDB database read-only
-        conn = duckdb.connect(str(DB_PATH), read_only=True)
-        # Query valid vessels
-        df = conn.execute("SELECT * FROM consumed_valid_ais").fetchdf()
-        conn.close()
-        return df
-    except Exception as error:
-        st.error(f"Error loading DuckDB storage: {error}")
-        return pd.DataFrame()
+    for attempt in range(50):
+        try:
+            # Connect to DuckDB database read-only
+            conn = duckdb.connect(str(DB_PATH), read_only=True)
+            # Query valid vessels
+            df = conn.execute("SELECT * FROM consumed_valid_ais").fetchdf()
+            conn.close()
+            return df
+        except duckdb.IOException as error:
+            if attempt < 49:
+                time.sleep(0.1)
+            else:
+                st.error(f"Error loading DuckDB storage (Locked): {error}")
+                return pd.DataFrame()
+        except Exception as error:
+            st.error(f"Error loading DuckDB storage: {error}")
+            return pd.DataFrame()
+
+    return pd.DataFrame()
 
 
 def get_latest_vessels(df: pd.DataFrame) -> pd.DataFrame:

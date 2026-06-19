@@ -4,13 +4,34 @@ Handles storage of consumed AIS telemetry into a DuckDB database.
 Differentiates between valid enriched records and rejected records.
 """
 
+import contextlib
 import importlib
 from pathlib import Path
+import time
 from typing import Any, Final
 
 from datafun_streaming.core.types import DataRecordDict
 from datafun_toolkit.logger import get_logger
 import duckdb
+
+
+@contextlib.contextmanager
+def get_duckdb_connection(db_path: Path, max_retries: int = 50, delay: float = 0.1):
+    """Yield a DuckDB connection, retrying if the file is locked."""
+    last_err = None
+    for _attempt in range(max_retries):
+        try:
+            conn = duckdb.connect(str(db_path))
+            try:
+                yield conn
+            finally:
+                conn.close()
+            return
+        except duckdb.IOException as e:
+            last_err = e
+            time.sleep(delay)
+    raise last_err
+
 
 # === DYNAMIC IMPORTS due to hyphens in names ===
 _contract = importlib.import_module(
@@ -64,7 +85,7 @@ def clean_rejected_consumed_record(record: dict[str, Any]) -> dict[str, Any]:
 
 def create_storage_tables(db_path: Path) -> None:
     """Create consumed AIS tables with appropriate data types if they do not exist."""
-    with duckdb.connect(str(db_path)) as conn:
+    with get_duckdb_connection(db_path) as conn:
         # Create valid table with precise data types
         conn.execute(f"""
             CREATE TABLE IF NOT EXISTS {VALID_TABLE_NAME} (
@@ -113,7 +134,7 @@ def create_storage_tables(db_path: Path) -> None:
 
 def clear_storage_tables(db_path: Path) -> None:
     """Truncate tables for a fresh run."""
-    with duckdb.connect(str(db_path)) as conn:
+    with get_duckdb_connection(db_path) as conn:
         conn.execute(f"DELETE FROM {VALID_TABLE_NAME}")  # noqa: S608
         conn.execute(f"DELETE FROM {REJECTED_TABLE_NAME}")  # noqa: S608
     LOG.info("Cleared storage tables.")
@@ -134,7 +155,7 @@ def write_valid_record(db_path: Path, record: DataRecordDict) -> None:
     # Order values to match schema
     insert_values = [clean_record[field] for field in CONSUMED_VALID_FIELDNAMES]
 
-    with duckdb.connect(str(db_path)) as conn:
+    with get_duckdb_connection(db_path) as conn:
         conn.execute(insert_sql, insert_values)
 
 
@@ -150,7 +171,7 @@ def write_rejected_record(
 
     insert_values = [clean_record[field] for field in CONSUMED_REJECTED_FIELDNAMES]
 
-    with duckdb.connect(str(db_path)) as conn:
+    with get_duckdb_connection(db_path) as conn:
         conn.execute(insert_sql, insert_values)
 
 
@@ -171,7 +192,7 @@ def log_storage_summary(db_path: Path) -> None:
         ORDER BY count DESC
         """  # noqa: S608
 
-    with duckdb.connect(str(db_path)) as conn:
+    with get_duckdb_connection(db_path) as conn:
         valid_result = conn.execute(sql_valid_count).fetchone()
         valid_count = valid_result[0] if valid_result else 0
 

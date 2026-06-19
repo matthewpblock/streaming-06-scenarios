@@ -755,3 +755,88 @@ CHECK:
 2026-06-19 06:27:06 | INFO | P06-PRODUCER | Forwarded 130 Chinese vessel telemetry messages. Latest: MMSI=413228010 Name='EN ZE' type=StaticDataReport
 2026-06-19 06:28:03 | INFO | P06-PRODUCER | Forwarded 140 Chinese vessel telemetry messages. Latest: MMSI=413577330 Name='SHUN TAI18' type=ShipStaticData
 2026-06-19 06:28:36 | INFO | P06-PRODUCER | Forwarded 150 Chinese vessel telemetry messages. Latest: MMSI=413855543 Name='ZHIHANG628' type=StandardClassBPositionReport
+2026-06-19 06:29:24 | INFO | P06-PRODUCER | Forwarded 160 Chinese vessel telemetry messages. Latest: MMSI=413342580 Name='LIAN YANG JUN 6' type=PositionReport
+2026-06-19 06:30:05 | INFO | P06-PRODUCER | Forwarded 170 Chinese vessel telemetry messages. Latest: MMSI=413900364 Name='BOSHIHANG8' type=PositionReport
+2026-06-19 06:30:32 | INFO | P06-PRODUCER | Forwarded 180 Chinese vessel telemetry messages. Latest: MMSI=413495980 Name='HUIJINQIAO299' type=PositionReport
+2026-06-19 06:31:07 | INFO | P06-PRODUCER | Forwarded 190 Chinese vessel telemetry messages. Latest: MMSI=4132703 Name='' type=DataLinkManagementMessage
+2026-06-19 06:31:52 | INFO | P06-PRODUCER | Forwarded 200 Chinese vessel telemetry messages. Latest: MMSI=413543480 Name='AN YANG 118' type=PositionReport
+2026-06-19 06:32:39 | INFO | P06-PRODUCER | Forwarded 210 Chinese vessel telemetry messages. Latest: MMSI=413995708 Name='' type=PositionReport
+2026-06-19 06:33:18 | INFO | P06-PRODUCER | Forwarded 220 Chinese vessel telemetry messages. Latest: MMSI=412401780 Name='NAN GANG 86' type=PositionReport
+2026-06-19 06:34:01 | INFO | P06-PRODUCER | Forwarded 230 Chinese vessel telemetry messages. Latest: MMSI=412403930 Name='YUE HANG 113' type=PositionReport
+2026-06-19 06:34:30 | INFO | P06-PRODUCER | Forwarded 240 Chinese vessel telemetry messages. Latest: MMSI=413855543 Name='ZHIHANG628' type=StaticDataReport
+2026-06-19 06:35:22 | INFO | P06-PRODUCER | Forwarded 250 Chinese vessel telemetry messages. Latest: MMSI=4125706 Name='' type=DataLinkManagementMessage
+2026-06-19 06:36:00 | DEBUG | C06-CONSUMER | KAFKA_BOOTSTRAP_SERVERS           = localhost:9092
+2026-06-19 06:36:00 | DEBUG | C06-CONSUMER | KAFKA_BROKER_ADDRESS_FAMILY       = v6
+2026-06-19 06:36:00 | DEBUG | C06-CONSUMER | KAFKA_TOPIC                       = mda-vessels-topic-ag
+2026-06-19 06:36:00 | DEBUG | C06-CONSUMER | KAFKA_CLEAR_TOPIC_ON_START        = true
+2026-06-19 06:36:00 | DEBUG | C06-CONSUMER | PRODUCER_MESSAGE_COUNT            = 3
+2026-06-19 06:36:00 | DEBUG | C06-CONSUMER | PRODUCER_MESSAGE_INTERVAL_SECONDS = 2
+2026-06-19 06:36:00 | DEBUG | C06-CONSUMER | PRODUCER_MAX_MESSAGES             = 50
+2026-06-19 06:36:00 | DEBUG | C06-CONSUMER | PRODUCER_POLL_INTERVAL_SECONDS    = 15
+2026-06-19 06:36:00 | DEBUG | C06-CONSUMER | KAFKA_GROUP_ID                    = streaming-consumer-group-A
+2026-06-19 06:36:00 | DEBUG | C06-CONSUMER | KAFKA_AUTO_OFFSET_RESET           = earliest
+2026-06-19 06:36:00 | DEBUG | C06-CONSUMER | CONSUMER_TIMEOUT_SECONDS          = 10
+2026-06-19 06:36:00 | DEBUG | C06-CONSUMER | CONSUMER_MAX_MESSAGES             = 1000
+2026-06-19 06:36:00 | DEBUG | C06-CONSUMER | AISSTREAM_API_KEY                 = ee7ff9340b731621f9d94097b7d23f6293607c06
+2026-06-19 06:36:00 | INFO | C06-CONSUMER | === RUN START ===
+2026-06-19 06:36:00 | INFO | C06-CONSUMER | project=C06-AIS-CONSUMER
+2026-06-19 06:36:00 | INFO | C06-CONSUMER | repo_dir=streaming-06-scenarios
+2026-06-19 06:36:00 | INFO | C06-CONSUMER | python=3.14.5
+2026-06-19 06:36:00 | INFO | C06-CONSUMER | os=Windows 11
+2026-06-19 06:36:00 | INFO | C06-CONSUMER | shell=powershell
+2026-06-19 06:36:00 | INFO | C06-CONSUMER | cwd=.
+2026-06-19 06:36:00 | INFO | C06-CONSUMER | github_actions=False
+2026-06-19 06:36:00 | INFO | C06-CONSUMER | ========================
+2026-06-19 06:36:00 | INFO | C06-CONSUMER | START AIS consumer main()
+2026-06-19 06:36:00 | INFO | C06-CONSUMER | ========================
+2026-06-19 06:36:00 | INFO | C06-CONSUMER | ROOT_DIR = .
+2026-06-19 06:36:00 | INFO | C06-CONSUMER | DATA_DIR = data
+2026-06-19 06:36:00 | INFO | C06-CONSUMER | OUTPUT_CSV = data\output\consumed_ais.csv
+2026-06-19 06:36:00 | INFO | C06-CONSUMER | OUTPUT_DB = data\output\ais.duckdb
+2026-06-19 06:36:00 | INFO | C06-CONSUMER | Loading settings from .env...
+2026-06-19 06:36:00 | INFO | C06-CONSUMER | KAFKA_BOOTSTRAP_SERVERS  = localhost:9092
+2026-06-19 06:36:00 | INFO | C06-CONSUMER | KAFKA_TOPIC              = mda-vessels-topic-ag
+2026-06-19 06:36:00 | INFO | C06-CONSUMER | KAFKA_GROUP_ID           = streaming-consumer-group-A
+2026-06-19 06:36:00 | INFO | C06-CONSUMER | CONSUMER_TIMEOUT_SECONDS = 10.0
+2026-06-19 06:36:00 | INFO | C06-CONSUMER | CONSUMER_MAX_MESSAGES    = 1000
+2026-06-19 06:36:00 | INFO | C06-CONSUMER | Verifying Kafka connection...
+2026-06-19 06:36:00 | INFO | C06-CONSUMER | Kafka port is reachable.
+2026-06-19 06:36:00 | INFO | C06-CONSUMER | Verifying Kafka topic...
+2026-06-19 06:36:22 | INFO | P06-PRODUCER | Forwarded 260 Chinese vessel telemetry messages. Latest: MMSI=413474470 Name='MINGHANG787' type=PositionReport
+2026-06-19 06:36:30 | INFO | C06-CONSUMER | Topic 'mda-vessels-topic-ag' exists.
+2026-06-19 06:36:30 | INFO | C06-CONSUMER | Found 262 message(s) available in topic.
+2026-06-19 06:36:30 | INFO | C06-CONSUMER | Creating Kafka consumer...
+2026-06-19 06:36:30 | INFO | C06-CONSUMER | Subscribed to topic: 'mda-vessels-topic-ag' (reading from beginning)
+2026-06-19 06:36:30 | INFO | C06-CONSUMER | Initializing output...
+2026-06-19 06:36:30 | INFO | C06-CONSUMER | Output CSV cleared: consumed_ais.csv
+2026-06-19 06:36:30 | INFO | C06-STORAGE | Initialized tables consumed_valid_ais and consumed_rejected_ais in DuckDB.
+2026-06-19 06:36:30 | INFO | C06-STORAGE | Cleared storage tables.
+2026-06-19 06:36:30 | INFO | C06-CONSUMER | Database initialized: ais.duckdb
+2026-06-19 06:36:30 | INFO | C06-CONSUMER | Live chart initialized.
+2026-06-19 06:36:30 | INFO | C06-CONSUMER | Consuming messages...
+2026-06-19 06:36:30 | INFO | C06-CONSUMER | Waiting for up to 1000 message(s).
+2026-06-19 06:36:30 | INFO | C06-CONSUMER | Press CTRL+C to stop early.
+
+2026-06-19 06:36:33 | INFO | C06-CONSUMER | Forwarded & Logged: MMSI=413504220 Name='JIN HAI 667' Risk=LOW SOG=0.1 knots
+2026-06-19 06:36:34 | INFO | C06-CONSUMER | Forwarded & Logged: MMSI=412401780 Name='NAN GANG 86' Risk=LOW SOG=8.3 knots
+2026-06-19 06:36:34 | INFO | C06-CONSUMER | Forwarded & Logged: MMSI=413865389 Name='ZHONGHANG927' Risk=LOW SOG=None knots
+2026-06-19 06:36:34 | INFO | C06-CONSUMER | Forwarded & Logged: MMSI=413479290 Name='HENG  YU  93' Risk=LOW SOG=None knots
+2026-06-19 06:36:34 | WARNING | C06-CONSUMER | Validation failed for vessel MMSI 4125706
+2026-06-19 06:36:34 | WARNING | C06-CONSUMER | Errors: ['Required field is blank: ship_name']
+2026-06-19 06:36:34 | INFO | C06-CONSUMER | Forwarded & Logged: MMSI=413494920 Name='YIN ZHU HU' Risk=LOW SOG=None knots
+2026-06-19 06:36:34 | INFO | C06-CONSUMER | Forwarded & Logged: MMSI=413342580 Name='LIAN YANG JUN 6' Risk=LOW SOG=8.2 knots
+2026-06-19 06:36:35 | INFO | C06-CONSUMER | Forwarded & Logged: MMSI=413228010 Name='EN ZE' Risk=LOW SOG=5.9 knots
+2026-06-19 06:36:35 | INFO | C06-CONSUMER | Forwarded & Logged: MMSI=413906548 Name='ZHUHANG28' Risk=LOW SOG=None knots
+2026-06-19 06:36:35 | INFO | C06-CONSUMER | Forwarded & Logged: MMSI=412400040 Name='SHENG PING189' Risk=LOW SOG=0 knots
+2026-06-19 06:36:35 | INFO | C06-CONSUMER | Kafka consumer closed.
+2026-06-19 06:37:01 | INFO | P06-PRODUCER | Forwarded 270 Chinese vessel telemetry messages. Latest: MMSI=413900364 Name='BOSHIHANG8' type=StandardClassBPositionReport
+2026-06-19 06:37:43 | INFO | P06-PRODUCER | Forwarded 280 Chinese vessel telemetry messages. Latest: MMSI=413342580 Name='LIAN YANG JUN 6' type=PositionReport
+2026-06-19 06:38:22 | INFO | P06-PRODUCER | Forwarded 290 Chinese vessel telemetry messages. Latest: MMSI=4132703 Name='' type=DataLinkManagementMessage
+2026-06-19 06:38:46 | INFO | P06-PRODUCER | Forwarded 300 Chinese vessel telemetry messages. Latest: MMSI=4125706 Name='' type=BaseStationReport
+2026-06-19 06:39:22 | INFO | P06-PRODUCER | Forwarded 310 Chinese vessel telemetry messages. Latest: MMSI=4132703 Name='' type=DataLinkManagementMessage
+2026-06-19 06:39:57 | INFO | P06-PRODUCER | Forwarded 320 Chinese vessel telemetry messages. Latest: MMSI=4132703 Name='' type=BaseStationReport
+2026-06-19 06:40:39 | INFO | P06-PRODUCER | Forwarded 330 Chinese vessel telemetry messages. Latest: MMSI=413465130 Name='HUIWAN306' type=ShipStaticData
+2026-06-19 06:41:14 | INFO | P06-PRODUCER | Forwarded 340 Chinese vessel telemetry messages. Latest: MMSI=412916802 Name='' type=ExtendedClassBPositionReport
+2026-06-19 06:41:29 | INFO | P06-PRODUCER | Producer stopped by user (CTRL+C).
+2026-06-19 06:41:29 | INFO | P06-PRODUCER | Flushing Kafka producer messages...
+2026-06-19 06:41:29 | INFO | P06-PRODUCER | Producer shutdown complete.
